@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="HomePage.css">
+</head>
+<body>
+<header>
+    <h1>It's Tea Time!</h1>
+    <p>Your favourite teas library, add a tea and configure the recipe, <br>see other people teas.</p>
+</header>
+
+<div id="NavButtsContainer">
+    <ul id="NavButts">
+        <li>
+            <img src="homebutton-pic.png" alt="Home Button" style="width:100px;height:100px;">
+            <div class="nav-container">
+                <a href="#home">Home</a>
+            </div>
+        </li>
+        <li>
+            <img src="profilebutton-pic.png" alt="Home Button" style="width:100px;height:100px;">
+            <div class="nav-container">
+                <a href="#Profile">Profile</a>
+            </div>
+        </li>
+        <li>
+            <img src="plusbutton-pic.png" alt="Home Button" style="width:100px;height:100px;">
+            <div class="nav-container">
+                <a href="#Add Tea">Add tea</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div id="TeasTiles">
+    <h2 id="AllTeasText">All teas</h2>
+    <div id="Tiles">
+        <ul style="list-style-type:none">
+            <li>
+                <div class="card">
+                    <img class="TilesImg" src="tea-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="container">
+                        <h4><b>Japan Green Sencha</b></h4>
+                        <p>Brewing time: 3 min</p>
+                        <p>OriginCountry: Japan</p>
+                        <p>Description : Finest Japan tea</p>
+                        <button class="button-details"> More!</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <img class="TilesImg" src="tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="container">
+                        <h4><b>China Yellow Bencha</b></h4>
+                        <p>Brewing time: 6 min</p>
+                        <p>OriginCountry: China</p>
+                        <p>Description : Finest China tea</p>
+                        <button class="button-details"> More!</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <!-- todo paging for more -->
+</div>
+
+<footer> <!--No idea why border doesn't show up -->
+   <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
