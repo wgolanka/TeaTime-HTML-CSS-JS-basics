@@ -81,14 +81,12 @@ body {
     padding-left: 2%;
 }
 
-/* Add some padding inside the card container */
 .container {
     padding: 2px 16px;
 }
 
 #Tiles li {
     display: inline-block;
-    /*padding-right: 20px;*/
     margin: 10px;
 }
 
