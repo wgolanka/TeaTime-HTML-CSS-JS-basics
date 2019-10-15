@@ -95,3 +95,8 @@ body {
 footer {
     margin-top: 150px;
 }
+
+p.footer-border {
+    border: 5px solid;
+    border: black;
+}
