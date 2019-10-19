@@ -1,32 +1,40 @@
-header {
+.body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.header {
     padding: 30px;
     text-align: center;
-    background: white;
-    color: black;
     font-size: 30px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-body {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+.header .title {
+    font-size: 50px;
+    font-weight: bold;
 }
 
-#NavButtsContainer ul {
-    list-style-type: none;
-    width: 720px;
+.nav-container {
     padding: 0;
-    overflow: hidden;
-    background-color: white;
     margin: 0 auto;
 }
 
-#NavButts li {
-    /*float: left;*/
-    display: inline-block;
-    font-size: 30px;
-    /*padding-right: 20px;*/
-    margin: 50px;
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.nav-list-item {
+    font-size: 30px;
+    margin: 50px;
+    text-align: center;
+}
+
+.material-icons {
+    font-size: 70px;
+}
+
 
 #NavButts li a {
     /*display: block;*/
@@ -95,6 +103,5 @@ footer {
 }
 
 p.footer-border {
-    border: 5px solid;
-    border: black;
+    border: 2px solid black;
 }
