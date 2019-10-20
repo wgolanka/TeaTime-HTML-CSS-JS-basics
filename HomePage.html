@@ -12,46 +12,52 @@
 </head>
 <body class="body">
 
+<!-- Header -->
 <header class="header">
     <h1 class="title">It's Tea Time!</h1>
     <p>Your favourite teas library, add a tea and configure the recipe, <br>see other people teas.</p>
 </header>
+<!-- /Header -->
 
+<!-- Navigation -->
 <div class="nav-container">
     <ul class="nav-list">
         <li class="nav-list-item">
-            <i class="material-icons">home</i>
+            <button class="material-icons">home</button>
             <div class="nav-container">
-                <a href="#home">Home</a>
+                <a class="nav-text" href="#home">Home</a>
             </div>
         </li>
 
         <li class="nav-list-item">
-            <i class="material-icons">account_circle</i>
+            <button class="material-icons">account_circle</button>
             <div class="nav-container">
-                <a href="#Profile">Profile</a>
+                <a class="nav-text" href="#Profile">Profile</a>
             </div>
         </li>
 
         <li class="nav-list-item">
-            <i class="material-icons">add</i>
+            <button class="material-icons">add</button>
 
             <div class="nav-container">
-                <a href="#Add Tea">Add tea</a>
+                <a class="nav-text" href="#Add Tea">Add tea</a>
             </div>
         </li>
     </ul>
 </div>
+<!-- /Navigation -->
 
 <!-- TeasTiles -->
-<div id="TeasTiles">
-    <h2 id="AllTeasText">All teas</h2>
-    <div id="Tiles">
-        <ul style="list-style-type:none">
-            <li>
+<div class="teas-tiles-container">
+    <!-- All teas title -->
+    <h2 class="all-teas-title">All teas</h2>
+    <!-- /All teas title -->
+    <div class="tiles">
+        <ul class="tiles-list">
+            <li class="tiles-item">
                 <div class="card">
-                    <img class="TilesImg" src="images/tea-pic.png" alt="Tea Avatar" style="width:25%">
-                    <div class="container">
+                    <img class="tiles-img" src="images/tea-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="card-container">
                         <h4><b>Japan Green Sencha</b></h4>
                         <p>Brewing time: 3 min</p>
                         <p>OriginCountry: Japan</p>
@@ -61,9 +67,9 @@
                 </div>
             </li>
 
-            <li>
+            <li class="tiles-item">
                 <div class="card">
-                    <img class="TilesImg" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <img class="tiles-img" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
                     <div class="container">
                         <h4><b>China Yellow Bencha</b></h4>
                         <p>Brewing time: 6 min</p>
@@ -74,9 +80,9 @@
                 </div>
             </li>
 
-            <li>
+            <li class="tiles-item">
                 <div class="card">
-                    <img class="TilesImg" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <img class="tiles-img" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
                     <div class="container">
                         <h4><b>China Yellow Bencha</b></h4>
                         <p>Brewing time: 6 min</p>
@@ -87,9 +93,9 @@
                 </div>
             </li>
 
-            <li>
+            <li class="tiles-item">
                 <div class="card">
-                    <img class="TilesImg" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <img class="tiles-img" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
                     <div class="container">
                         <h4><b>China Yellow Bencha</b></h4>
                         <p>Brewing time: 6 min</p>
@@ -100,9 +106,9 @@
                 </div>
             </li>
 
-            <li>
+            <li class="tiles-item">
                 <div class="card">
-                    <img class="TilesImg" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <img class="tiles-img" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
                     <div class="container">
                         <h4><b>China Yellow Bencha</b></h4>
                         <p>Brewing time: 6 min</p>
@@ -113,9 +119,9 @@
                 </div>
             </li>
 
-            <li>
+            <li class="tiles-item">
                 <div class="card">
-                    <img class="TilesImg" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <img class="tiles-img" src="images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
                     <div class="container">
                         <h4><b>China Yellow Bencha</b></h4>
                         <p>Brewing time: 6 min</p>
@@ -130,13 +136,21 @@
 </div>
 <!-- /TeasTiles -->
 
-<div>
-    <!-- todo paging for more -->
+<!-- Pagination -->
+<div class="pagination">
+    <a class="pagination-item" href="#">&laquo;</a>
+    <a class="pagination-item" href="#">1</a>
+    <a class="pagination-active-item" href="#">2</a>
+    <a class="pagination-item" href="#">3</a>
+    <a class="pagination-item" href="#">&raquo;</a>
 </div>
+<!-- /Pagination -->
 
-<footer> <!--No idea why border doesn't show up -->
+<!-- Footer -->
+<footer class="footer">
    <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
 </footer>
+<!-- /Footer -->
 
 </body>
 </html>

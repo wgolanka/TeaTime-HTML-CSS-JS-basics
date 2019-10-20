@@ -1,9 +1,16 @@
+.material-icons {
+    font-size: 70px;
+    background-color: white;
+    border: 0 solid white;
+}
+
 .body {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     line-height: 1.3;
 }
 
+/*# Header -->*/
 .header {
     padding: 30px;
     text-align: center;
@@ -14,10 +21,20 @@
     font-size: 50px;
     font-weight: bold;
 }
+/*# /Header -->*/
 
+/*# Navigation -->*/
 .nav-container {
     padding: 0;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-text {
+    color: black;
+    text-decoration: none
 }
 
 .nav-list {
@@ -27,31 +44,20 @@
 }
 .nav-list-item {
     font-size: 30px;
-    margin: 50px;
+    margin: 110px;
     text-align: center;
 }
+/*# /Navigation -->*/
 
-.material-icons {
-    font-size: 70px;
-}
-
-
-#NavButts li a {
-    /*display: block;*/
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-#NavButts li a:hover {
-    background-color: antiquewhite;
-}
-
-#AllTeasText {
+/*# Tiles -->*/
+.all-teas-title {
     font-size: 30px;
-    padding: 40px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.tiles-list {
+    list-style-type:none
 }
 
 .card {
@@ -65,7 +71,7 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.TilesImg {
+.tiles-img {
     float: left;
     margin: 10px;
     height: 200px;
@@ -89,19 +95,49 @@
     padding-left: 2%;
 }
 
-.container {
+.card-container {
     padding: 2px 16px;
 }
 
-#Tiles li {
+.tiles-item {
     display: inline-block;
     margin: 10px;
 }
+/*# /Tiles -->*/
 
-footer {
+/*# Pagination -->*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 80px;
+}
+
+.pagination-item {
+    color: black;
+    text-decoration: none;
+    padding: 16px 36px;
+    font-size: 30px;
+}
+
+.pagination-active-item {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 36px;
+    font-size: 30px;
+}
+
+.pagination-item:hover {
+    background-color: #ddd;
+}
+/*# /Pagination -->*/
+
+/*# Footer -->*/
+.footer {
     margin-top: 150px;
 }
 
-p.footer-border {
-    border: 2px solid black;
+.footer-border {
+    border-right: 1px solid black;
+    border-top: 1px solid black;
 }
+/*# /Footer -->*/
