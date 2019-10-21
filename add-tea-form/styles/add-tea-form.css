@@ -1,0 +1,62 @@
+.material-icons {
+    font-size: 70px;
+    background-color: white;
+    border: 0 solid white;
+}
+
+.body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+/*# Header -->*/
+.header {
+    padding: 30px 30px 30px 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.header .title {
+    font-size: 50px;
+    font-weight: bold;
+}
+/*# /Header -->*/
+
+/*# Navigation -->*/
+.nav-container {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.nav-text {
+    color: black;
+    text-decoration: none
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50px;
+}
+.nav-list-item {
+    font-size: 30px;
+    text-align: center;
+}
+/*# /Navigation -->*/
+
+/*# Form -->*/
+/*# /Form -->*/
+
+
+/*# Footer -->*/
+.footer {
+    margin-top: 150px;
+}
+
+.footer-border {
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+/*# /Footer -->*/
