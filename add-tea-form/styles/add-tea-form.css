@@ -21,6 +21,7 @@
     font-size: 50px;
     font-weight: bold;
 }
+
 /*# /Header -->*/
 
 /*# Navigation -->*/
@@ -40,15 +41,69 @@
     justify-content: space-around;
     margin: 50px;
 }
+
 .nav-list-item {
     font-size: 30px;
     text-align: center;
 }
+
 /*# /Navigation -->*/
 
-/*# Form -->*/
-/*# /Form -->*/
+/*# Header Form -->*/
+.form-header .header {
+    font-size: 32px;
+}
 
+/*# /Header Form -->*/
+
+/*# Form -->*/
+.form-add-tea {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.form {
+    border: 3px solid #4CAF50;
+    border-radius: 3px;
+}
+
+.form-wrapper {
+    list-style-type: none;
+    padding: 0;
+    background-color: white;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+}
+
+.form-input {
+    padding: .5em;
+}
+
+.label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+.form-text-area {
+    padding: .5em 1em .5em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-submit-button {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    color: white;
+    border-radius: 3px;
+    padding: .5em;
+}
+
+/*# /Form -->*/
 
 /*# Footer -->*/
 .footer {
@@ -59,4 +114,5 @@
     border-right: 1px solid black;
     border-top: 1px solid black;
 }
+
 /*# /Footer -->*/
