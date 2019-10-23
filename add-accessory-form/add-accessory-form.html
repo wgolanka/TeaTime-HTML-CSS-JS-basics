@@ -8,7 +8,7 @@
 
     <!-- import styles -->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="styles/add-tea-form.css">
+    <link rel="stylesheet" href="styles/add-accessory-form.css">
     <title>TIN - Mini Project</title>
 </head>
 <body class="body">
@@ -50,12 +50,12 @@
 
 <!-- Header Form -->
 <div class="form-header">
-    <p class="header">Add your tea</p>
+    <p class="header">Add new accessory</p>
 </div>
 <!-- /Header Form -->
 
 <!-- Form -->
-<div class="form-add-tea">
+<div class="form-add-accessory">
     <form class="form">
         <ul class="form-wrapper">
             <li class="form-row">
@@ -63,21 +63,23 @@
                 <input class="form-input" id="name" type="text" name="Name" value="Green Sencha">
             </li>
             <li class="form-row">
-                <label class="label" for="origin-country">Origin country:</label>
-                <input class="form-input" id="origin-country" type="text" name="Origin country" value="Japan">
+                <label class="label" for="is-necessary">Is necessary?</label>
+                <div class="checkbox-necessary">
+                    <input type="checkbox" value="1" id="is-necessary" name="" />
+                    <label class="checkbox-label" for="is-necessary"></label>
+                </div>
             </li>
             <li class="form-row">
-                <label class="label" for="harvest-season">Harvest season:</label>
-                <input class="form-input" id="harvest-season" type="text" name="Harvest season" value="Autumn">
-            </li>
-            <li class="form-row">
-                <label class="label" for="caffeine-content">Caffeine content:</label>
-                <input class="form-input" id="caffeine-content" type="text" name="Caffeine content" value="12 mg">
+                <label class="label" for="price-range">Price range:</label>
+                <div class="price-range">
+                    <input class="form-input" id="price-range" type="text" name="Price range: " value="from 12 pln">
+                    <br>
+                    <input class="form-input" id="price-range-sec" type="text" name="Price range: " value="to 24 pln">
+                </div>
             </li>
             <li class="form-row">
                 <label class="label" for="description">Description:</label>
-                <textarea class="form-text-area" id="description" name="Description">This tea is harvested
-only during moonset! The taste is incredible </textarea>
+                <textarea class="form-text-area" id="description" name="Description">This accessory will help you make the best tea of your life! </textarea>
             </li>
             <li class="form-row">
                 <label class="label" for="image-link">Image link:</label>
