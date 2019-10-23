@@ -8,7 +8,7 @@
 
     <!-- import styles -->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="styles/add-accessory-form.css">
+    <link rel="stylesheet" href="styles/login-form.css">
     <title>TIN - Mini Project</title>
 </head>
 <body class="body">
@@ -50,44 +50,25 @@
 
 <!-- Header Form -->
 <div class="form-header">
-    <p class="header">Add new accessory</p>
+    <p class="header">We are happy to have you!
+        <br>Please login</p>
 </div>
 <!-- /Header Form -->
 
 <!-- Form -->
-<div class="form-add-accessory">
+<div class="form-login">
     <form class="form">
         <ul class="form-wrapper">
             <li class="form-row">
-                <label class="label" for="name">Name:</label>
-                <input class="form-input" id="name" type="text" name="Name" placeholder="Green Sencha">
+                <label class="label" for="name">Username:</label>
+                <input class="form-input" id="name" type="text" name="Name" placeholder="Geralt420">
             </li>
             <li class="form-row">
-                <label class="label" for="is-necessary">Is necessary?</label>
-                <div class="checkbox-necessary">
-                    <input type="checkbox" value="2" id="is-necessary" name="Checkbox" />
-                    <label class="checkbox-label" for="is-necessary"></label>
-                </div>
+                <label class="label" for="password">Password:</label>
+                <input class="form-input" id="password" type="password" name="Password" placeholder="********">
             </li>
             <li class="form-row">
-                <label class="label" for="price-range">Price range:</label>
-                <div class="price-range">
-                    <input class="form-input" id="price-range" type="text" name="Price range: " placeholder="from 12 pln">
-                    <br>
-                    <input class="form-input" id="price-range-sec" type="text" name="Price range: " placeholder="to 24 pln">
-                </div>
-            </li>
-            <li class="form-row">
-                <label class="label" for="description">Description:</label>
-                <textarea class="form-text-area" placeholder="This accessory will help you make the best tea of your life!" id="description" name="Description"></textarea>
-            </li>
-            <li class="form-row">
-                <label class="label" for="image-link">Image link:</label>
-                <textarea class="form-text-area" id="image-link" placeholder="https://i.imgur.com/t04DtjZ.jpg"
-                          name="Image link"></textarea>
-            </li>
-            <li class="form-row">
-                <input class="form-submit-button" type="submit" value="Submit">
+                <input class="form-submit-button" type="submit" value="Log in">
             </li>
         </ul>
     </form>
