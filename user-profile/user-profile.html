@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="PL">
+<head>
+    <!-- import font and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- import styles -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="styles/user-profile.css">
+    <title>TIN - Mini Project</title>
+</head>
+<body class="body">
+
+<!-- Header -->
+<header class="header">
+    <h1 class="title">It's Tea Time!</h1>
+    <p>Your favourite teas library, add a tea and configure the recipe, <br>see other people teas.</p>
+</header>
+<!-- /Header -->
+
+<!-- Navigation -->
+<div class="nav-container">
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <button class="material-icons">home</button>
+            <div class="nav-container">
+                <a class="nav-text" href="#Home">Home</a>
+            </div>
+        </li>
+
+        <li class="nav-list-item">
+            <button class="material-icons">account_circle</button>
+            <div class="nav-container">
+                <a class="nav-text" href="#Profile">Profile</a>
+            </div>
+        </li>
+
+        <li class="nav-list-item">
+            <button class="material-icons">add</button>
+
+            <div class="nav-container">
+                <a class="nav-text" href="#Add Tea">Add tea</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- /Navigation -->
+
+<!-- Header Form -->
+<div class="form-header">
+    <p class="header">Your profile</p>
+</div>
+<!-- /Header Form -->
+
+<!-- Profile info -->
+<div class="profile-info">
+    <!-- Avatar-->
+    <div class="user-avatar">
+        <img class="avatar" src="../images/avatar.png"/>
+    </div>
+    <!-- /Avatar -->
+
+    <!-- Form -->
+    <div class="form-profile">
+        <form class="form">
+            <ul class="form-wrapper">
+                <li class="form-row">
+                    <label class="label" for="email">Email:</label>
+                    <p class="form-paragraph" id="email">Geralt420@gmail.com</p>
+                </li>
+                <li class="form-row">
+                    <label class="label" for="username">Username:</label>
+                    <p class="form-paragraph" id="username">Geralt420</p>
+                </li>
+                <li class="form-row">
+                    <label class="label" for="description">Description:</label>
+                    <p class="form-paragraph" id="description">I am me, Hi!</p>
+                </li>
+                <li class="form-row">
+                    <input class="form-submit-button" type="submit" value="Edit your profile">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <!-- /Form -->
+</div>
+<!-- /Profile info -->
+
+
+<!-- TeasTiles -->
+<div class="teas-tiles-container">
+    <!-- All teas title -->
+    <h2 class="all-teas-title">Your teas</h2>
+    <!-- /All teas title -->
+    <div class="tiles">
+        <ul class="tiles-list">
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>China Yellow Bencha</b></p>
+                    <img class="tiles-img" src="../images/tea-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Brewing time: 3 min</p>
+                        <p>OriginCountry: Japan</p>
+                        <p>Description : Finest Japan tea</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>China Yellow Bencha</b></p>
+                    <img class="tiles-img" src="../images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Brewing time: 6 min</p>
+                        <p>OriginCountry: China</p>
+                        <p>Description : Finest China tea</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>China Yellow Bencha</b></p>
+                    <img class="tiles-img" src="../images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Brewing time: 6 min</p>
+                        <p>OriginCountry: China</p>
+                        <p>Description : Finest China tea</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>China Yellow Bencha</b></p>
+                    <img class="tiles-img" src="../images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Brewing time: 6 min</p>
+                        <p>OriginCountry: China</p>
+                        <p>Description : Finest China tea</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>China Yellow Bencha</b></p>
+                    <img class="tiles-img" src="../images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Brewing time: 6 min</p>
+                        <p>OriginCountry: China</p>
+                        <p>Description : Finest China tea</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>China Yellow Bencha</b></p>
+                    <img class="tiles-img" src="../images/tea-yellow-pic.png" alt="Tea Avatar" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Brewing time: 6 min</p>
+                        <p>OriginCountry: China</p>
+                        <p>Description : Finest China tea</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /TeasTiles -->
+
+<!-- Pagination -->
+<div class="pagination">
+    <a class="pagination-item" href="#">&laquo;</a>
+    <a class="pagination-item" href="#">1</a>
+    <a class="pagination-active-item" href="#">2</a>
+    <a class="pagination-item" href="#">3</a>
+    <a class="pagination-item" href="#">&raquo;</a>
+</div>
+<!-- /Pagination -->
+
+<!-- Footer -->
+<footer class="footer">
+    <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
+</footer>
+<!-- /Footer -->
+
+</body>
+</html>
