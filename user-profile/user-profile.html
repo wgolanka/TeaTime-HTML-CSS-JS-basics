@@ -8,7 +8,7 @@
 
     <!-- import styles -->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="styles/register-form.css">
+    <link rel="stylesheet" href="styles/user-profile.css">
     <title>TIN - Mini Project</title>
 </head>
 <body class="body">
@@ -50,43 +50,41 @@
 
 <!-- Header Form -->
 <div class="form-header">
-    <p class="header">Join our tea family!
-        <br>Register below!</p>
+    <p class="header">Your profile</p>
 </div>
 <!-- /Header Form -->
 
-<!-- Form -->
-<div class="form-register">
-    <form class="form">
-        <ul class="form-wrapper">
-            <li class="form-row">
-                <label class="label" for="email">Email:</label>
-                <input class="form-input" id="email" type="text" name="Email" placeholder="Geralt420@gmail.com">
-            </li>
-            <li class="form-row">
-                <label class="label" for="username">Username:</label>
-                <input class="form-input" id="username" type="text" name="Username" placeholder="Geralt420">
-            </li>
-            <li class="form-row">
-                <label class="label" for="password">Password:</label>
-                <input class="form-input" id="password" type="password" name="Password" placeholder="********">
-            </li>
-            <li class="form-row">
-                <label class="label" for="description">Description:</label>
-                <textarea class="form-text-area" id="description" name="Description" placeholder="Tell us about yourself!"></textarea>
-            </li>
-            <li class="form-row">
-                <label class="label" for="image-link">Avatar link:</label>
-                <textarea class="form-text-area" id="image-link" placeholder="https://i.imgur.com/t04DtjZ.jpg"
-                          name="Image link"></textarea>
-            </li>
-            <li class="form-row">
-                <input class="form-submit-button" type="submit" value="Register">
-            </li>
-        </ul>
-    </form>
+<div class="profile-info">
+    <!-- Avatar-->
+    <div class="user-avatar">
+        <img class="avatar" src="../images/avatar.png"/>
+    </div>
+    <!-- /Avatar -->
+
+    <!-- Form -->
+    <div class="form-profile">
+        <form class="form">
+            <ul class="form-wrapper">
+                <li class="form-row">
+                    <label class="label" for="email">Email:</label>
+                    <p class="form-paragraph" id="email">Geralt420@gmail.com</p>
+                </li>
+                <li class="form-row">
+                    <label class="label" for="username">Username:</label>
+                    <p class="form-paragraph" id="username">Geralt420</p>
+                </li>
+                <li class="form-row">
+                    <label class="label" for="description">Description:</label>
+                    <p class="form-paragraph" id="description">I am me, Hi!</p>
+                </li>
+                <li class="form-row">
+                    <input class="form-submit-button" type="submit" value="Edit your profile">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <!-- /Form -->
 </div>
-<!-- /Form -->
 
 <!-- Footer -->
 <footer class="footer">
