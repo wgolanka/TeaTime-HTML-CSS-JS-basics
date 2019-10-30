@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="PL">
+<head>
+    <!-- import font and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- import styles -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="styles/edit-tea-config-form.css">
+    <title>TIN - Mini Project</title>
+</head>
+<body class="body">
+
+<!-- Header -->
+<header class="header">
+    <h1 class="title">It's Tea Time!</h1>
+    <p>Your favourite teas library, add a tea and configure the recipe, <br>see other people teas.</p>
+</header>
+<!-- /Header -->
+
+<!-- Navigation -->
+<div class="nav-container">
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <button class="material-icons">home</button>
+            <div class="nav-container">
+                <a class="nav-text" href="#Home">Home</a>
+            </div>
+        </li>
+
+        <li class="nav-list-item">
+            <button class="material-icons">account_circle</button>
+            <div class="nav-container">
+                <a class="nav-text" href="#Profile">Profile</a>
+            </div>
+        </li>
+
+        <li class="nav-list-item">
+            <button class="material-icons">add</button>
+
+            <div class="nav-container">
+                <a class="nav-text" href="#Add Tea">Add tea</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- /Navigation -->
+
+<!-- Header Form -->
+<div class="form-header">
+    <p class="header">Edit your tea configuration</p>
+</div>
+<!-- /Header Form -->
+
+<!-- Form -->
+<div class="form-edit-tea">
+    <form class="form">
+        <ul class="form-wrapper">
+            <li class="form-row">
+                <label class="label" for="brewing-time">Brewing time:</label>
+                <input class="form-input" id="brewing-time" type="text" value="2m">
+            </li>
+            <li class="form-row">
+                <label class="label" for="ingredients">Ingredients:</label>
+                <input class="form-input" id="ingredients" type="text" value="Milk, honey">
+            </li>
+            <li class="form-row">
+                <label class="label" for="drinking-time">Drinking time:</label>
+                <input class="form-input" id="drinking-time" type="text" value="Morning">
+            </li>
+            <li class="form-row">
+                <input class="form-submit-button" type="submit" value="Submit">
+            </li>
+        </ul>
+    </form>
+</div>
+<!-- /Form -->
+
+<!-- Footer -->
+<footer class="footer">
+    <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
+</footer>
+<!-- /Footer -->
+
+</body>
+</html>
