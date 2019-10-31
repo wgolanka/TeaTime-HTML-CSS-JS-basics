@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="PL">
+<head>
+    <!-- import font and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- import styles -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="styles/tea-details.css">
+    <title>TIN - Mini Project</title>
+</head>
+<body class="body">
+
+<!-- Header -->
+<header class="header">
+    <h1 class="title">It's Tea Time!</h1>
+    <p>Your favourite teas library, add a tea and configure the recipe, <br>see other people teas.</p>
+</header>
+<!-- /Header -->
+
+<!-- Navigation -->
+<div class="nav-container">
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <button class="material-icons">home</button>
+            <div class="nav-container">
+                <a class="nav-text" href="#Home">Home</a>
+            </div>
+        </li>
+
+        <li class="nav-list-item">
+            <button class="material-icons">account_circle</button>
+            <div class="nav-container">
+                <a class="nav-text" href="#Profile">Profile</a>
+            </div>
+        </li>
+
+        <li class="nav-list-item">
+            <button class="material-icons">add</button>
+
+            <div class="nav-container">
+                <a class="nav-text" href="#Add Tea">Add tea</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- /Navigation -->
+
+<!-- Header Form -->
+<div class="form-header">
+    <p class="header">Tea details</p>
+</div>
+<!-- /Header Form -->
+
+<!-- Profile info -->
+<div class="tea-info">
+    <!-- Avatar-->
+    <div class="user-avatar">
+        <img class="avatar" src="../images/tea-pic.png"/>
+    </div>
+    <!-- /Avatar -->
+
+    <!-- Form -->
+    <div class="form-tea">
+        <form class="form">
+            <ul class="form-wrapper">
+                <li class="form-row">
+                    <label class="label" for="name">Name:</label>
+                    <p class="form-paragraph" id="name">Green Sencha</p>
+                </li>
+                <li class="form-row">
+                    <label class="label" for="origin-country">Origin country:</label>
+                    <p class="form-paragraph" id="origin-country">Japan</p>
+                </li>
+                <li class="form-row">
+                    <label class="label" for="harvest-season">Origin country:</label>
+                    <p class="form-paragraph" id="harvest-season">Summer, autumn</p>
+                </li>
+                <li class="form-row">
+                    <label class="label" for="description">Description:</label>
+                    <p class="form-paragraph" id="description">So tasty and fresh!</p>
+                </li>
+                <li class="form-row">
+                    <input class="form-submit-button" type="submit" value="Edit tea main details">
+                </li>
+            </ul>
+        </form>
+    </div>
+    <!-- /Form -->
+</div>
+
+<!-- /Profile info -->
+<div class="form-header-config">
+    <p class="header">Tea configuration</p>
+</div>
+<div class="form-tea-config">
+    <form class="form">
+        <ul class="form-wrapper">
+            <li class="form-row-config">
+                <label class="label" for="brewing-time">Brewing time:</label>
+                <p class="form-paragraph" id="brewing-time">2m</p>
+            </li>
+            <li class="form-row-config">
+                <label class="label" for="ingredients">Ingredients:</label>
+                <p class="form-paragraph" id="ingredients">Honey, milk</p>
+            </li>
+            <li class="form-row-config">
+                <label class="label" for="best-time-to-drink">Drinking time:</label>
+                <p class="form-paragraph" id="best-time-to-drink">Morning</p>
+            </li>
+            <li class="form-row-config">
+                <input class="form-submit-button" type="submit" value="Edit tea configuration">
+            </li>
+        </ul>
+    </form>
+</div>
+
+<!-- Accessories tiles -->
+<div class="accessories-tiles-container">
+    <!-- All teas title -->
+    <p class="all-accessories-title">Recommended accessories</p>
+    <!-- /All teas title -->
+    <div class="tiles">
+        <ul class="tiles-list">
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>Silver Stainer 3.0</b></p>
+                    <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Description: I love to use it with my tea</p>
+                        <p>Is necessary: No</p>
+                        <p>Price range : 10-500pln</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>Mesh Ball Infuser</b></p>
+                    <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Description: Really helpful and easy to use</p>
+                        <p>Is necessary: Yes</p>
+                        <p>Price range : 3-100pln</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>Silver Stainer 3.0</b></p>
+                    <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Description: I love to use it with my tea</p>
+                        <p>Is necessary: No</p>
+                        <p>Price range : 10-500pln</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>Mesh Ball Infuser</b></p>
+                    <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Description: Really helpful and easy to use</p>
+                        <p>Is necessary: Yes</p>
+                        <p>Price range : 3-100pln</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>Silver Stainer 3.0</b></p>
+                    <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Description: I love to use it with my tea</p>
+                        <p>Is necessary: No</p>
+                        <p>Price range : 10-500pln</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+            <li class="tiles-item">
+                <div class="card">
+                    <p class="card-title"><b>Mesh Ball Infuser</b></p>
+                    <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
+                    <div class="card-text-container">
+                        <p>Description: Really helpful and easy to use</p>
+                        <p>Is necessary: Yes</p>
+                        <p>Price range : 3-100pln</p>
+                    </div>
+                    <button class="card-button">Click to see more!</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /Accessories tiles -->
+
+<!-- More accessories button -->
+<div class="accessories-button">
+    <input class="form-submit-button" type="submit" value="Add more accessories">
+</div>
+<!-- /More accessories button -->
+
+<!-- Pagination -->
+<div class="pagination">
+    <a class="pagination-item" href="#">&laquo;</a>
+    <a class="pagination-item" href="#">1</a>
+    <a class="pagination-active-item" href="#">2</a>
+    <a class="pagination-item" href="#">3</a>
+    <a class="pagination-item" href="#">&raquo;</a>
+</div>
+<!-- /Pagination -->
+
+<!-- Footer -->
+<footer class="footer">
+    <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
+</footer>
+<!-- /Footer -->
+
+</body>
+</html>
