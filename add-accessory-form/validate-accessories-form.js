@@ -1,6 +1,17 @@
-function validateFormOnSubmit(form) {
-    validateName(form.name);
-    validatePriceRange(form.priceFrom, form.priceTo);
+const formName = document.getElementById('name');
+const priceFrom = document.getElementById('price-from');
+const priceTo = document.getElementById('price-to');
+const submitButton = document.getElementById('submitButton');
+
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    validateFormOnSubmit();
+});
+
+function validateFormOnSubmit() {
+    validateName(formName);
+    validatePriceRange(priceFrom, priceTo);
 
     return false;
 }
@@ -29,13 +40,12 @@ function successValidation(input, errorId){
 
 function validatePriceRange(formPriceFrom, formPriceTo) {
     let error = "";
-    let priceFrom = parseFloat(formPriceFrom);
-    let priceTo = parseFloat(formPriceTo);
+    let priceFrom = parseFloat(formPriceFrom.value);
+    let priceTo = parseFloat(formPriceTo.value);
     let errorColor = '#bb0018';
     let noErrorColor = '#b4b2b4';
     let errorFromId = 'price-from-error';
     let errorToId = 'price-to-error';
-
 
     if (priceFrom > priceTo) {
         formPriceFrom.style.borderColor = errorColor;
@@ -54,8 +64,6 @@ function validatePriceRange(formPriceFrom, formPriceTo) {
         error = 4;
     }
     else {
-        priceFrom.style.borderColor = noErrorColor;
-        priceTo.style.borderColor = noErrorColor;
         document.getElementById(errorFromId).innerHTML = '';
         document.getElementById(errorToId).innerHTML = '';
     }
