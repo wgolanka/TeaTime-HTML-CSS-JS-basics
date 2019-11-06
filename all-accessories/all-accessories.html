@@ -8,7 +8,7 @@
 
     <!-- import styles -->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="styles/tea-details.css">
+    <link rel="stylesheet" href="styles/all-accessories.css">
     <title>TIN - Mini Project</title>
 </head>
 <body class="body">
@@ -49,87 +49,15 @@
 </div>
 <!-- /Navigation -->
 
-<!-- Header Form -->
-<div class="form-header">
-    <p class="header">Tea details</p>
-</div>
-<!-- /Header Form -->
-
-<!-- Profile info -->
-<div class="tea-info">
-    <!-- Avatar-->
-    <div class="user-avatar">
-        <img class="avatar" src="../images/tea-pic.png"/>
-    </div>
-    <!-- /Avatar -->
-
-    <!-- Form -->
-    <div class="form-tea">
-        <form class="form">
-            <ul class="form-wrapper">
-                <li class="form-row">
-                    <label class="label" for="name">Name:</label>
-                    <p class="form-paragraph" id="name">Green Sencha</p>
-                </li>
-                <li class="form-row">
-                    <label class="label" for="origin-country">Origin country:</label>
-                    <p class="form-paragraph" id="origin-country">Japan</p>
-                </li>
-                <li class="form-row">
-                    <label class="label" for="harvest-season">Origin country:</label>
-                    <p class="form-paragraph" id="harvest-season">Summer, autumn</p>
-                </li>
-                <li class="form-row">
-                    <label class="label" for="description">Description:</label>
-                    <p class="form-paragraph" id="description">So tasty and fresh!</p>
-                </li>
-                <li class="form-row">
-                    <input class="form-submit-button" onclick="location.href='../edit-tea-form/edit-tea-form.html'"
-                           type="button" value="Edit tea main details">
-                </li>
-            </ul>
-        </form>
-    </div>
-    <!-- /Form -->
-</div>
-
-<!-- /Profile info -->
-<div class="form-header-config">
-    <p class="header">Tea configuration</p>
-</div>
-<div class="form-tea-config">
-    <form class="form">
-        <ul class="form-wrapper">
-            <li class="form-row-config">
-                <label class="label" for="brewing-time">Brewing time:</label>
-                <p class="form-paragraph" id="brewing-time">2m</p>
-            </li>
-            <li class="form-row-config">
-                <label class="label" for="ingredients">Ingredients:</label>
-                <p class="form-paragraph" id="ingredients">Honey, milk</p>
-            </li>
-            <li class="form-row-config">
-                <label class="label" for="best-time-to-drink">Drinking time:</label>
-                <p class="form-paragraph" id="best-time-to-drink">Morning</p>
-            </li>
-            <li class="form-row-config">
-                <input class="form-submit-button"
-                       onclick="location.href='../edit-tea-config-form/edit-tea-config-form.html'"
-                       type="button" value="Edit tea configuration">
-            </li>
-        </ul>
-    </form>
-</div>
-
 <!-- Accessories tiles -->
 <div class="accessories-tiles-container">
     <!-- All teas title -->
-    <p class="all-accessories-title">Recommended accessories</p>
+    <p class="all-accessories-title">All accessories</p>
     <!-- /All teas title -->
     <div class="tiles">
         <ul class="tiles-list">
             <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
+                <div class="card">
                     <p class="card-title"><b>Silver Stainer 3.0</b></p>
                     <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
                     <div class="card-text-container">
@@ -141,7 +69,7 @@
                 </div>
             </li>
             <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
+                <div class="card">
                     <p class="card-title"><b>Mesh Ball Infuser</b></p>
                     <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
                     <div class="card-text-container">
@@ -153,7 +81,7 @@
                 </div>
             </li>
             <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
+                <div class="card">
                     <p class="card-title"><b>Silver Stainer 3.0</b></p>
                     <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
                     <div class="card-text-container">
@@ -165,7 +93,7 @@
                 </div>
             </li>
             <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
+                <div class="card">
                     <p class="card-title"><b>Mesh Ball Infuser</b></p>
                     <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
                     <div class="card-text-container">
@@ -177,7 +105,7 @@
                 </div>
             </li>
             <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
+                <div class="card">
                     <p class="card-title"><b>Silver Stainer 3.0</b></p>
                     <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
                     <div class="card-text-container">
@@ -189,7 +117,7 @@
                 </div>
             </li>
             <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
+                <div class="card">
                     <p class="card-title"><b>Mesh Ball Infuser</b></p>
                     <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
                     <div class="card-text-container">
@@ -204,13 +132,6 @@
     </div>
 </div>
 <!-- /Accessories tiles -->
-
-<!-- More accessories button -->
-<div class="accessories-button">
-    <input class="form-submit-button" onclick="location.href='../add-accesory-to-tea/add-accessory-to-tea.html'"
-           type="submit" value="Add more accessories">
-</div>
-<!-- /More accessories button -->
 
 <!-- Pagination -->
 <div class="pagination">

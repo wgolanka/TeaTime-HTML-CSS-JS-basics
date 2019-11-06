@@ -57,22 +57,23 @@
 /*# /Header Form -->*/
 
 /*# Avatar and Form -->*/
-.tea-info {
+.accessory-info {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 50px;
 }
 
 /*# /Avatar and Form -->*/
 
 /*# Avatar -->*/
 .avatar {
-    max-height: 450px;
+    max-height: 250px;
 }
 
 /*# /Avatar ->*/
 
 /*# Form -->*/
-.form-tea {
+.form-accessory {
     font-size: 24px;
 }
 
@@ -111,37 +112,12 @@
 
 /*# /Form -->*/
 
-/*# Config -->*/
-.form-header-config .header {
-    font-size: 32px;
-    margin-top: 30px;
-}
-
-.form-tea-config {
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    margin-left: 80px;
-}
-
-.form-row-config {
-    display: flex;
-    justify-content: flex-start;
-    padding: .5em;
-}
-
-.form-tea-config .form-submit-button {
-    justify-self: right;
-}
-
-/*# /Config -->*/
-
 /*# Tiles -->*/
 .accessories-tiles-container {
     margin-top: 80px;
 }
 
-.all-accessories-title {
+.all-teas-title {
     display: flex;
     justify-content: center;
     font-size: 32px;

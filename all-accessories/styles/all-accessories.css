@@ -21,7 +21,6 @@
     font-size: 50px;
     font-weight: bold;
 }
-
 /*# /Header -->*/
 
 /*# Navigation -->*/
@@ -41,105 +40,13 @@
     justify-content: space-around;
     margin: 50px;
 }
-
 .nav-list-item {
     font-size: 30px;
     text-align: center;
 }
-
 /*# /Navigation -->*/
 
-/*# Header Form -->*/
-.form-header .header {
-    font-size: 32px;
-}
-
-/*# /Header Form -->*/
-
-/*# Avatar and Form -->*/
-.tea-info {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-/*# /Avatar and Form -->*/
-
-/*# Avatar -->*/
-.avatar {
-    max-height: 450px;
-}
-
-/*# /Avatar ->*/
-
-/*# Form -->*/
-.form-tea {
-    font-size: 24px;
-}
-
-.form {
-    border: 0 solid white;
-}
-
-.form-wrapper {
-    list-style-type: none;
-    padding: 0;
-    background-color: white;
-}
-
-.form-row {
-    display: flex;
-    justify-content: flex-end;
-    padding: .5em;
-}
-
-.form-paragraph {
-    padding: .5em;
-}
-
-.label {
-    padding: .5em 2em .5em 0;
-    flex: 1;
-}
-
-.form-submit-button {
-    background-color: #4CAF50;
-    border: 1px solid #4CAF50;
-    color: white;
-    border-radius: 3px;
-    padding: .5em;
-}
-
-/*# /Form -->*/
-
-/*# Config -->*/
-.form-header-config .header {
-    font-size: 32px;
-    margin-top: 30px;
-}
-
-.form-tea-config {
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    margin-left: 80px;
-}
-
-.form-row-config {
-    display: flex;
-    justify-content: flex-start;
-    padding: .5em;
-}
-
-.form-tea-config .form-submit-button {
-    justify-self: right;
-}
-
-/*# /Config -->*/
-
 /*# Tiles -->*/
-.accessories-tiles-container {
-    margin-top: 80px;
-}
 
 .all-accessories-title {
     display: flex;
@@ -149,7 +56,7 @@
 }
 
 .tiles-list {
-    list-style-type: none;
+    list-style-type:none;
     display: flex;
     flex-wrap: wrap;
     /* align-items: center; */
@@ -163,11 +70,8 @@
     width: 350px;
     padding-left: 10px;
     padding-top: 10px;
-    background-image: url("http://clipart-library.com/new_gallery/40-404370_cross-png-spray-paint-x-png.png");
-    background-size: 30px;
-    background-repeat: no-repeat;
-    background-position-x: right;
 }
+
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -205,17 +109,7 @@
     display: inline-block;
     margin: 20px;
 }
-
 /*# /Tiles -->*/
-
-/*# More accessories button -->*/
-.accessories-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    font-size: 28px;
-}
-/*# /More accessories button -->*/
 
 /*# Pagination -->*/
 .pagination {
@@ -241,7 +135,6 @@
 .pagination-item:hover {
     background-color: #ddd;
 }
-
 /*# /Pagination -->*/
 
 /*# Footer -->*/
@@ -253,5 +146,4 @@
     border-right: 1px solid black;
     border-top: 1px solid black;
 }
-
 /*# /Footer -->*/
