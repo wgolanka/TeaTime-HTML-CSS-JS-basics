@@ -82,6 +82,7 @@
 
 .form-input {
     padding: .5em;
+    border-color: #b4b2b4;
 }
 
 .label {
@@ -142,14 +143,11 @@ input[type=checkbox] {
     background: #4CAF50;
 }
 
-.price-range {
-
-}
-
 .form-text-area {
     padding: .5em 1em .5em 0;
     display: flex;
     flex-direction: column;
+    border-color: #b4b2b4;
 }
 
 .form-submit-button {
@@ -161,6 +159,15 @@ input[type=checkbox] {
 }
 
 /*# /Form -->*/
+
+
+/*# Error -->*/
+.error {
+    font-size: 15px;
+    color: #bb0018;
+    text-align: center;
+}
+/*# Error -->*/
 
 /*# Footer -->*/
 .footer {
