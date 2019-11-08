@@ -13,8 +13,6 @@
 </head>
 <body class="body">
 
-<script src="validate-accessories-form.js"></script>
-
 <!-- Header -->
 <header class="header">
     <h1 class="title">It's Tea Time!</h1>
@@ -59,7 +57,7 @@
 
 <!-- Form -->
 <div class="form-add-accessory">
-    <form class="form" id="accessory_form" onsubmit="return validateFormOnSubmit(this)">
+    <form class="form" id="accessory_form" method="post">
         <ul class="form-wrapper">
             <li class="form-row">
                 <label class="label" for="name">Name:</label>
@@ -103,7 +101,7 @@
                           name="Image link"></textarea>
             </li>
             <li class="form-row">
-                <input class="form-submit-button" type="submit" value="Submit">
+                <button class="form-submit-button" type="submit" id="submitButton">Submit</button>
             </li>
         </ul>
     </form>
@@ -112,9 +110,10 @@
 
 <!-- Footer -->
 <footer class="footer">
-    <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
+    <p class="footer-border">By Wiktoria Golanka.  aka Senior FrontEnd Developer &#128540;. All rights reserved.</p>
 </footer>
 <!-- /Footer -->
 
+<script src="validate-accessories-form.js"></script>
 </body>
 </html>

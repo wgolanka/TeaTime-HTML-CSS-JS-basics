@@ -1,74 +1,94 @@
-function validateFormOnSubmit(form) {
-    validateName(form.name);
-    validatePriceRange(form.priceFrom, form.priceTo);
+const name = document.getElementById('name');
+const priceFrom = document.getElementById('price-from');
+const priceTo = document.getElementById('price-to');
+const submitButton = document.getElementById('submitButton');
 
-    return false;
-}
+const nameError = 'name-error';
+const priceFromError = 'price-from-error';
+const priceToError = 'price-to-error';
 
-function validateName(name) { //TODO name can't contain special signs
-    validateIsInputFilled(name, 'name-error', "Name")
-}
+const errorColor = '#bb0018';
+const successValidationColor = '#b4b2b4';
 
-function validateIsInputFilled(input, errorId, fieldName){
-    if (input.value.length === 0) {
-        errorOnBlankInput(input, errorId, fieldName + " must be filled in.");
-        return 'error'
-    } else {
-        successValidation(input, errorId);
-        return 'success'
+const blankFieldErrorMsg = " must be filled in";
+const specialCharactersErrorMsg = " can't contain special characters";
+
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    validateName(name);
+    let isSuccessValidationPriceFrom = validatePrice(priceFrom, priceFromError, "Price from"); //TODO can't contain words
+    let isSuccessValidationPriceTo = validatePrice(priceTo, priceToError, "Price to");
+    if (isSuccessValidationPriceFrom && isSuccessValidationPriceTo) {
+        validatePriceRange();
+    }
+
+});
+
+function validateName(name) {
+    if (isFieldBlank(name)) {
+        errorOnInputField(name, nameError, "Name" + blankFieldErrorMsg);
+    }
+    else if (containsSpecialCharacters(name)) {
+        errorOnInputField(name, nameError, "Name " + specialCharactersErrorMsg)
+    }
+    else {
+        successValidation(name, nameError)
     }
 }
 
-function errorOnBlankInput(input, errorId, errorMsg){
-    input.style.borderColor = '#bb0018';
-    document.getElementById(errorId).innerHTML = errorMsg;
-    input.placeholder = '';
+function containsSpecialCharacters(input) {
+    let regexOnlyWordsAndNumber = /^[a-z0-9.]+$/;
+    return !regexOnlyWordsAndNumber.exec(input.value);
 }
 
-function successValidation(input, errorId){
-    input.style.borderColor = '#b4b2b4';
+function containsNonNumbers(input) {
+    let regexOnlyNumbers = /^[a-z0-9]+$/;
+    return !regexOnlyNumbers.exec(input);
+}
+
+function isFieldBlank(input) {
+    return input.value.length === 0;
+}
+
+function errorOnInputField(input, errorId, errorMsg) {
+    input.style.borderColor = errorColor;
+    document.getElementById(errorId).innerHTML = errorMsg;
+    input.placeholder = '';
+    console.warn(errorMsg)
+}
+
+function successValidation(input, errorId) {
+    input.style.borderColor = successValidationColor;
     document.getElementById(errorId).innerHTML = '';
 }
 
-
-function validatePriceRange(formPriceFrom, formPriceTo) { //TODO price must be a number
-    let error = "";
-    let priceFrom = parseFloat(formPriceFrom.value);
-    let priceTo = parseFloat(formPriceTo.value);
-    let errorColor = '#bb0018';
-    let errorFromId = 'price-from-error';
-    let errorToId = 'price-to-error';
-
-
-    let priceFromBlank = validateIsInputFilled(formPriceFrom, errorFromId, 'Price from');
-    let priceToBlank = validateIsInputFilled(formPriceTo, errorToId, 'Price to');
-
-    if(priceFromBlank === 'error' || priceToBlank === 'error'){
-        return error;
-    }
-
-    console.log(priceFrom);
-    console.log(priceTo);
-    if (priceFrom < 0) {
-        console.log(priceFrom + ' smaller than 0');
-        formPriceFrom.style.borderColor = errorColor;
-        document.getElementById(errorFromId).innerHTML = "Price from can't be smaller than 0";
-    }
-    else if (priceTo < 0) {
-        console.log(priceTo + ' smaller than 0');
-        formPriceTo.style.borderColor = errorColor;
-        document.getElementById(errorToId).innerHTML = "Price to can't be smaller than 0";
-    }
-    else if (priceFrom > priceTo) {
-        console.log(priceFrom + 'is bigger than ' + priceTo);
-        formPriceFrom.style.borderColor = errorColor;
-        formPriceTo.style.borderColor = errorColor;
-        document.getElementById(errorToId).innerHTML = "Price from can't be smaller than price to";
+function validatePrice(input, errorId, name) {
+    if (isFieldBlank(input)) {
+        errorOnInputField(input, errorId, name + blankFieldErrorMsg);
+        return false;
+    } else if (input.value < 0) {
+        errorOnInputField(input, errorId, name + " can't be smaller than 0");
+        return false;
+    } else if (containsNonNumbers(parseFloat(input))) {
+        errorOnInputField(input, errorId, name + " must be a number")
     }
     else {
-        console.log('everything ok with prices');
-        successValidation(formPriceFrom, errorFromId);
-        successValidation(formPriceTo, errorToId);
+        successValidation(input, errorId);
+        return true;
     }
-    return error;
+}
+
+function validatePriceRange() { //TODO price must be a number
+    let parsedPriceFrom = parseFloat(priceFrom.value);
+    let parsedPriceTo = parseFloat(priceTo.value);
+
+    if (parsedPriceFrom > parsedPriceTo) {
+        priceFrom.style.borderColor = errorColor;
+        priceTo.style.borderColor = errorColor;
+        document.getElementById(priceToError).innerHTML = "Price from can't be bigger than price to";
+    } else {
+        successValidation(priceFrom, priceFromError);
+        successValidation(priceTo, priceToError);
+    }
 }
