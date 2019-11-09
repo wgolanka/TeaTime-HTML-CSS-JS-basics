@@ -33,8 +33,8 @@ submitButton.addEventListener('click', (event) => { //TODO autofocus on field wh
     let isDescOk = validateDescription();
     let isImageLinkOk = validateImageLink();
 
-    scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk)
-    showErrorSummary()
+    scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk);
+    showErrorSummary();
 });
 
 function validateName() {
@@ -167,11 +167,8 @@ function scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPric
 function showErrorSummary() {
     let errorSummary = document.getElementById('error-summary');
     errorSummary.style.color = errorColor;
-
-    if (errorCount === 1) {
-        errorSummary.innerHTML = errorCount + ' error to fix';
-    } else if (errorCount > 1) {
-        errorSummary.innerHTML = errorCount + ' errors to fix';
+    if (errorCount > 0) {
+        errorSummary.innerHTML = errorCount === 1 ? errorCount + ' error to fix' : errorCount + " errors to fix";
     } else {
         errorSummary.innerHTML = 'Submitted successfully!';
         errorSummary.style.color = '#49a02f';
