@@ -1,11 +1,15 @@
 const name = document.getElementById('name');
 const priceFrom = document.getElementById('price-from');
 const priceTo = document.getElementById('price-to');
+const description = document.getElementById('description');
 const submitButton = document.getElementById('submitButton');
+const imageLink = document.getElementById('image-link');
 
 const nameError = 'name-error';
 const priceFromError = 'price-from-error';
 const priceToError = 'price-to-error';
+const descError = 'desc-error';
+const imageLinkError = "image-link-error";
 
 const errorColor = '#bb0018';
 const successValidationColor = '#b4b2b4';
@@ -16,39 +20,43 @@ const specialCharactersErrorMsg = " can't contain special characters";
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
 
-    validateName();
-    let isSuccessValidationPriceFrom = validatePrice(priceFrom, priceFromError, "Price from");
-    let isSuccessValidationPriceTo = validatePrice(priceTo, priceToError, "Price to");
-    if (isSuccessValidationPriceFrom && isSuccessValidationPriceTo) {
-        validatePriceRange();
+    let isNameOk = validateName();
+    let isPriceFromOk = validatePrice(priceFrom, priceFromError, "Price from");
+    let isPriceToOk = validatePrice(priceTo, priceToError, "Price to");
+    let isPriceRangeOk = false;
+    if (isPriceFromOk && isPriceToOk) {
+        isPriceRangeOk = validatePriceRange();
     }
+    let isDescOk = validateDescription();
+    let isImageLinkOk = validateImageLink();
 
+    if (isNameOk && isPriceFromOk && isPriceToOk && isPriceRangeOk && isDescOk && isImageLinkOk) {
+        alert("New accessory added!");
+    }
 });
 
 function validateName() {
     if (isFieldBlank(name)) {
         errorOnInputField(name, nameError, "Name" + blankFieldErrorMsg);
+        return false;
     }
     else if (containsSpecialCharacters(name)) {
-        errorOnInputField(name, nameError, "Name " + specialCharactersErrorMsg)
+        errorOnInputField(name, nameError, "Name " + specialCharactersErrorMsg);
+        return false;
     }
     else {
-        successValidation(name, nameError)
+        successValidation(name, nameError);
+        return true;
     }
-}
-
-function containsSpecialCharacters(input) {
-    let regexOnlyWordsAndNumber = /^[a-z0-9.]+$/;
-    return !regexOnlyWordsAndNumber.exec(input.value);
-}
-
-function containsNonNumbers(input) {
-    let regexOnlyNumbers = /^[0-9.]+$/;
-    return !regexOnlyNumbers.exec(input.value);
 }
 
 function isFieldBlank(input) {
     return input.value.length === 0;
+}
+
+function containsSpecialCharacters(input) {
+    let regexOnlyWordsAndNumber = /^[a-zA-Z0-9. ]+$/;
+    return !regexOnlyWordsAndNumber.exec(input.value);
 }
 
 function errorOnInputField(input, errorId, errorMsg) {
@@ -65,7 +73,6 @@ function successValidation(input, errorId) {
 
 function validatePrice(input, errorId, name) {
     let parsedPrice = parseFloat(input.value);
-    console.log(parsedPrice);
     if (isFieldBlank(input)) {
         errorOnInputField(input, errorId, name + blankFieldErrorMsg);
         return false;
@@ -82,6 +89,11 @@ function validatePrice(input, errorId, name) {
     }
 }
 
+function containsNonNumbers(input) {
+    let regexOnlyNumbers = /^[0-9.]+$/;
+    return !regexOnlyNumbers.exec(input.value);
+}
+
 function validatePriceRange() {
     let parsedPriceFrom = parseFloat(priceFrom.value);
     let parsedPriceTo = parseFloat(priceTo.value);
@@ -90,8 +102,46 @@ function validatePriceRange() {
         priceFrom.style.borderColor = errorColor;
         priceTo.style.borderColor = errorColor;
         document.getElementById(priceToError).innerHTML = "Price from can't be bigger than price to";
+        return false;
     } else {
         successValidation(priceFrom, priceFromError);
         successValidation(priceTo, priceToError);
+        return true;
     }
+}
+
+function validateDescription() {
+    if (isFieldBlank(description)) {
+        errorOnInputField(description, descError, "Description" + blankFieldErrorMsg);
+        return false;
+    }
+    else if (description.value.length > 200) {
+        errorOnInputField(description, descError, "Description maximum length is 200 characters");
+        return false;
+    }
+    else {
+        successValidation(description, descError);
+        return true;
+    }
+}
+
+function validateImageLink() {
+    if (isFieldBlank(imageLink)) {
+        imageLink.placeholder = '';
+    }
+    if (!isValidURL(imageLink)) {
+        errorOnInputField(imageLink, imageLinkError, "This is not valid url");
+        return false;
+    }
+    else {
+        successValidation(imageLink, imageLinkError);
+        return true;
+    }
+}
+
+function isValidURL(url) {
+    let urlElement = document.createElement('input');
+    urlElement.setAttribute('type', 'url');
+    urlElement.value = url.value;
+    return urlElement.validity.valid;
 }
