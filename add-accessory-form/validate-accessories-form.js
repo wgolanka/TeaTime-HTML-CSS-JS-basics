@@ -17,7 +17,7 @@ const successValidationColor = '#b4b2b4';
 const blankFieldErrorMsg = " must be filled in";
 const specialCharactersErrorMsg = " can't contain special characters";
 
-submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('click', (event) => { //TODO autofocus on field when wrong, sum errors
     event.preventDefault();
 
     let isNameOk = validateName();
@@ -33,6 +33,8 @@ submitButton.addEventListener('click', (event) => {
     if (isNameOk && isPriceFromOk && isPriceToOk && isPriceRangeOk && isDescOk && isImageLinkOk) {
         alert("New accessory added!");
     }
+
+    scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk)
 });
 
 function validateName() {
@@ -63,7 +65,7 @@ function errorOnInputField(input, errorId, errorMsg) {
     input.style.borderColor = errorColor;
     document.getElementById(errorId).innerHTML = errorMsg;
     input.placeholder = '';
-    console.warn(errorMsg)
+    console.warn(errorMsg);
 }
 
 function successValidation(input, errorId) {
@@ -144,4 +146,20 @@ function isValidURL(url) {
     urlElement.setAttribute('type', 'url');
     urlElement.value = url.value;
     return urlElement.validity.valid;
+}
+
+function scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk) {
+    if (!isNameOk) {
+        name.scrollIntoView()
+    } else if (!isPriceFromOk) {
+        priceFrom.scrollIntoView()
+    } else if (!isPriceToOk) {
+        priceTo.scrollIntoView()
+    } else if (!isPriceRangeOk) {
+        priceFrom.scrollIntoView()
+    } else if (!isDescOk) {
+        description.scrollIntoView()
+    } else if (!isImageLinkOk) {
+        imageLink.scrollIntoView()
+    }
 }
