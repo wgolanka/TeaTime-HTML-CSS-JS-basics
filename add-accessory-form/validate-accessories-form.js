@@ -19,20 +19,6 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-function showErrorSummary() {
-    let errorSummary = document.getElementById('error-summary');
-    errorSummary.style.color = errorColor;
-
-    if (errorCount === 1) {
-        errorSummary.innerHTML = errorCount + ' error to fix';
-    } else if (errorCount > 1) {
-        errorSummary.innerHTML = errorCount + ' errors to fix';
-    } else {
-        errorSummary.innerHTML = 'Submitted successfully!';
-        errorSummary.style.color = '#49a02f';
-    }
-}
-
 submitButton.addEventListener('click', (event) => { //TODO autofocus on field when wrong, sum errors
     event.preventDefault();
 
@@ -175,5 +161,19 @@ function scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPric
         description.scrollIntoView()
     } else if (!isImageLinkOk) {
         imageLink.scrollIntoView()
+    }
+}
+
+function showErrorSummary() {
+    let errorSummary = document.getElementById('error-summary');
+    errorSummary.style.color = errorColor;
+
+    if (errorCount === 1) {
+        errorSummary.innerHTML = errorCount + ' error to fix';
+    } else if (errorCount > 1) {
+        errorSummary.innerHTML = errorCount + ' errors to fix';
+    } else {
+        errorSummary.innerHTML = 'Submitted successfully!';
+        errorSummary.style.color = '#49a02f';
     }
 }
