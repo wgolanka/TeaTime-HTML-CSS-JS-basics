@@ -16,8 +16,8 @@ const specialCharactersErrorMsg = " can't contain special characters";
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
 
-    validateName(name);
-    let isSuccessValidationPriceFrom = validatePrice(priceFrom, priceFromError, "Price from"); //TODO can't contain words
+    validateName();
+    let isSuccessValidationPriceFrom = validatePrice(priceFrom, priceFromError, "Price from");
     let isSuccessValidationPriceTo = validatePrice(priceTo, priceToError, "Price to");
     if (isSuccessValidationPriceFrom && isSuccessValidationPriceTo) {
         validatePriceRange();
@@ -25,7 +25,7 @@ submitButton.addEventListener('click', (event) => {
 
 });
 
-function validateName(name) {
+function validateName() {
     if (isFieldBlank(name)) {
         errorOnInputField(name, nameError, "Name" + blankFieldErrorMsg);
     }
@@ -43,8 +43,8 @@ function containsSpecialCharacters(input) {
 }
 
 function containsNonNumbers(input) {
-    let regexOnlyNumbers = /^[a-z0-9]+$/;
-    return !regexOnlyNumbers.exec(input);
+    let regexOnlyNumbers = /^[0-9.]+$/;
+    return !regexOnlyNumbers.exec(input.value);
 }
 
 function isFieldBlank(input) {
@@ -64,14 +64,17 @@ function successValidation(input, errorId) {
 }
 
 function validatePrice(input, errorId, name) {
+    let parsedPrice = parseFloat(input.value);
+    console.log(parsedPrice);
     if (isFieldBlank(input)) {
         errorOnInputField(input, errorId, name + blankFieldErrorMsg);
         return false;
-    } else if (input.value < 0) {
+    } else if (parsedPrice < 0) {
         errorOnInputField(input, errorId, name + " can't be smaller than 0");
         return false;
-    } else if (containsNonNumbers(parseFloat(input))) {
-        errorOnInputField(input, errorId, name + " must be a number")
+    } else if (containsNonNumbers(input)) {
+        errorOnInputField(input, errorId, name + " must be a number");
+        return false;
     }
     else {
         successValidation(input, errorId);
@@ -79,7 +82,7 @@ function validatePrice(input, errorId, name) {
     }
 }
 
-function validatePriceRange() { //TODO price must be a number
+function validatePriceRange() {
     let parsedPriceFrom = parseFloat(priceFrom.value);
     let parsedPriceTo = parseFloat(priceTo.value);
 
