@@ -17,9 +17,26 @@ const successValidationColor = '#b4b2b4';
 const blankFieldErrorMsg = " must be filled in";
 const specialCharactersErrorMsg = " can't contain special characters";
 
+let errorCount = 0;
+
+function showErrorSummary() {
+    let errorSummary = document.getElementById('error-summary');
+    errorSummary.style.color = errorColor;
+
+    if (errorCount === 1) {
+        errorSummary.innerHTML = errorCount + ' error to fix';
+    } else if (errorCount > 1) {
+        errorSummary.innerHTML = errorCount + ' errors to fix';
+    } else {
+        errorSummary.innerHTML = 'Submitted successfully!';
+        errorSummary.style.color = '#49a02f';
+    }
+}
+
 submitButton.addEventListener('click', (event) => { //TODO autofocus on field when wrong, sum errors
     event.preventDefault();
 
+    errorCount = 0;
     let isNameOk = validateName();
     let isPriceFromOk = validatePrice(priceFrom, priceFromError, "Price from");
     let isPriceToOk = validatePrice(priceTo, priceToError, "Price to");
@@ -30,11 +47,8 @@ submitButton.addEventListener('click', (event) => { //TODO autofocus on field wh
     let isDescOk = validateDescription();
     let isImageLinkOk = validateImageLink();
 
-    if (isNameOk && isPriceFromOk && isPriceToOk && isPriceRangeOk && isDescOk && isImageLinkOk) {
-        alert("New accessory added!");
-    }
-
     scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk)
+    showErrorSummary()
 });
 
 function validateName() {
@@ -66,6 +80,7 @@ function errorOnInputField(input, errorId, errorMsg) {
     document.getElementById(errorId).innerHTML = errorMsg;
     input.placeholder = '';
     console.warn(errorMsg);
+    errorCount++;
 }
 
 function successValidation(input, errorId) {
@@ -101,9 +116,8 @@ function validatePriceRange() {
     let parsedPriceTo = parseFloat(priceTo.value);
 
     if (parsedPriceFrom > parsedPriceTo) {
-        priceFrom.style.borderColor = errorColor;
-        priceTo.style.borderColor = errorColor;
-        document.getElementById(priceToError).innerHTML = "Price from can't be bigger than price to";
+        errorOnInputField(priceFrom, priceFromError, '');
+        errorOnInputField(priceTo, priceToError, "Price from can't be bigger than price to");
         return false;
     } else {
         successValidation(priceFrom, priceFromError);
