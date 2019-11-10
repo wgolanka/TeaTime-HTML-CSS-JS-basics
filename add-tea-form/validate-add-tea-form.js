@@ -1,13 +1,15 @@
 const name = document.getElementById('name');
-const priceFrom = document.getElementById('price-from');
-const priceTo = document.getElementById('price-to');
+const originCountry = document.getElementById('origin-country');
+const harvestSeason = document.getElementById('harvest-season');
+const caffeineContent = document.getElementById('caffeine-content');
 const description = document.getElementById('description');
-const submitButton = document.getElementById('submit-button');
 const imageLink = document.getElementById('image-link');
+const submitButton = document.getElementById('submit-button');
 
 const nameError = 'name-error';
-const priceFromError = 'price-from-error';
-const priceToError = 'price-to-error';
+const originCountryError = 'origin-country-error';
+const harvestSeasonError = 'harvest-season-error';
+const caffeineContentError = 'caffeine-content-error';
 const descError = 'desc-error';
 const imageLinkError = "image-link-error";
 
@@ -19,35 +21,32 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-submitButton.addEventListener('click', (event) => { //TODO autofocus on field when wrong, sum errors
+submitButton.addEventListener('click', (event) => {
     event.preventDefault();
 
     errorCount = 0;
-    let isNameOk = validateName();
-    let isPriceFromOk = validatePrice(priceFrom, priceFromError, "Price from");
-    let isPriceToOk = validatePrice(priceTo, priceToError, "Price to");
-    let isPriceRangeOk = false;
-    if (isPriceFromOk && isPriceToOk) {
-        isPriceRangeOk = validatePriceRange();
-    }
+    let isNameOk = simpleValidate(name, nameError, "Name");
+    let isOriginCountryOk = simpleValidate(originCountry, originCountryError, "Origin country");
+    let isHarvestSeasonOk = simpleValidate(harvestSeason, harvestSeasonError, "Harvest season");
+    let isCaffeineContentOk = validateCaffeineContent();
     let isDescOk = validateDescription();
     let isImageLinkOk = validateImageLink();
 
-    scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk);
+    scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeasonOk, isCaffeineContentOk, isDescOk, isImageLinkOk);
     showErrorSummary();
 });
 
-function validateName() {
-    if (isFieldBlank(name)) {
-        errorOnInputField(name, nameError, "Name" + blankFieldErrorMsg);
+function simpleValidate(input, errorId, name) {
+    if (isFieldBlank(input)) {
+        errorOnInputField(input, errorId, name + blankFieldErrorMsg);
         return false;
     }
     else if (containsSpecialCharacters(name)) {
-        errorOnInputField(name, nameError, "Name " + specialCharactersErrorMsg);
+        errorOnInputField(input, errorId, name + specialCharactersErrorMsg);
         return false;
     }
     else {
-        successValidation(name, nameError);
+        successValidation(input, errorId);
         return true;
     }
 }
@@ -74,40 +73,22 @@ function successValidation(input, errorId) {
     document.getElementById(errorId).innerHTML = '';
 }
 
-function validatePrice(input, errorId, name) {
-    let parsedPrice = parseFloat(input.value);
-    if (isFieldBlank(input)) {
-        errorOnInputField(input, errorId, name + blankFieldErrorMsg);
-        return false;
-    } else if (parsedPrice < 0) {
-        errorOnInputField(input, errorId, name + " can't be smaller than 0");
-        return false;
-    } else if (containsNonNumbers(input)) {
-        errorOnInputField(input, errorId, name + " must be a number");
-        return false;
-    }
-    else {
-        successValidation(input, errorId);
-        return true;
-    }
-}
-
 function containsNonNumbers(input) {
     let regexOnlyNumbers = /^[0-9.]+$/;
     return !regexOnlyNumbers.exec(input.value);
 }
 
-function validatePriceRange() {
-    let parsedPriceFrom = parseFloat(priceFrom.value);
-    let parsedPriceTo = parseFloat(priceTo.value);
+function validateCaffeineContent() {
+    let parsedCaffeineContent = parseFloat(caffeineContent.value);
 
-    if (parsedPriceFrom > parsedPriceTo) {
-        errorOnInputField(priceFrom, priceFromError, '');
-        errorOnInputField(priceTo, priceToError, "Price from can't be bigger than price to");
+    if (parsedCaffeineContent < 0) {
+        errorOnInputField(caffeineContent, caffeineContentError, "Caffeine content can't be smaller than 0");
+        return false;
+    } else if (!isFieldBlank(caffeineContent) && containsNonNumbers(caffeineContent)) {
+        errorOnInputField(caffeineContent, caffeineContentError, "Caffeine content can't contain non numbers");
         return false;
     } else {
-        successValidation(priceFrom, priceFromError);
-        successValidation(priceTo, priceToError);
+        successValidation(caffeineContent, caffeineContentError);
         return true;
     }
 }
@@ -148,15 +129,16 @@ function isValidURL(url) {
     return urlElement.validity.valid;
 }
 
-function scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk) {
+function scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeasonOk, isCaffeineContentOk, isDescOk,
+                                    isImageLinkOk) {
     if (!isNameOk) {
         name.scrollIntoView()
-    } else if (!isPriceFromOk) {
-        priceFrom.scrollIntoView()
-    } else if (!isPriceToOk) {
-        priceTo.scrollIntoView()
-    } else if (!isPriceRangeOk) {
-        priceFrom.scrollIntoView()
+    } else if (!isOriginCountryOk) {
+        originCountry.scrollIntoView()
+    } else if (!isHarvestSeasonOk) {
+        harvestSeason.scrollIntoView()
+    } else if (!isCaffeineContentOk) {
+        caffeineContent.scrollIntoView()
     } else if (!isDescOk) {
         description.scrollIntoView()
     } else if (!isImageLinkOk) {
