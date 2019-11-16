@@ -56,6 +56,13 @@
 
 /*# /Header Form -->*/
 
+
+.fields-info {
+    margin: 18px;
+    font-size: 12px;
+    color: red;
+}
+
 /*# Form -->*/
 .form-add-accessory {
     display: flex;

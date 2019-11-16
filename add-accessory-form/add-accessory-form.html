@@ -59,8 +59,11 @@
 <div class="form-add-accessory">
     <form class="form" id="accessory_form" method="post">
         <ul class="form-wrapper">
+            <li class="fields-info">
+                <p>Fields with * are obligatory</p>
+            </li>
             <li class="form-row">
-                <label class="label" for="name">Name:</label>
+                <label class="label" for="name">*Name:</label>
                 <input class="form-input" id="name" type="text" name="Name" placeholder="Green Sencha">
             </li>
             <li>
@@ -74,7 +77,7 @@
                 </div>
             </li>
             <li class="form-row">
-                <label class="label" for="price-from">Price from:</label>
+                <label class="label" for="price-from">*Price from:</label>
                 <input class="form-input" id="price-from" type="text" name="priceFrom" placeholder="from 12 pln">
 
             </li>
@@ -82,7 +85,7 @@
                 <div id="price-from-error" class="error"></div>
             </li>
             <li class="form-row">
-                <label class="label" for="price-to">Price to:</label>
+                <label class="label" for="price-to">*Price to:</label>
                 <input class="form-input" id="price-to" name="priceTo" type="text"
                        placeholder="to 24 pln">
             </li>
@@ -90,7 +93,7 @@
                 <div id="price-to-error" class="error"></div>
             </li>
             <li class="form-row">
-                <label class="label" for="description">Description:</label>
+                <label class="label" for="description">*Description:</label>
                 <textarea class="form-text-area"
                           placeholder="This accessory will help you make the best tea of your life!" id="description"
                           name="Description"></textarea>
@@ -99,9 +102,9 @@
                 <div id="desc-error" class="error"></div>
             </li>
             <li class="form-row">
-                <label class="label" for="image-link">Image link:</label>
-                <textarea class="form-text-area" id="image-link" placeholder="https://i.imgur.com/t04DtjZ.jpg"
-                          name="Image link"></textarea>
+                <label class="label" for="image-link"> Image link:</label>
+                <input class="form-text-area" id="image-link" type="url" placeholder="https://i.imgur.com/t04DtjZ.jpg"
+                       name="Image link">
             </li>
             <li>
                 <div id="image-link-error" class="error"></div>
@@ -117,7 +120,7 @@
 
 <!-- Footer -->
 <footer class="footer">
-    <p class="footer-border">By Wiktoria Golanka.  aka Senior FrontEnd Developer &#128540;. All rights reserved.</p>
+    <p class="footer-border">By Wiktoria Golanka. aka Senior FrontEnd Developer &#128540;. All rights reserved.</p>
 </footer>
 <!-- /Footer -->
 
