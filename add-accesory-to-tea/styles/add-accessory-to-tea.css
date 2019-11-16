@@ -14,13 +14,9 @@
 .header {
     padding: 30px 30px 30px 30px;
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
 }
 
-.header .title {
-    font-size: 50px;
-    font-weight: bold;
-}
 
 /*# /Header -->*/
 
@@ -107,6 +103,7 @@
     color: white;
     border-radius: 3px;
     padding: .5em;
+    width: 200px;
 }
 
 /*# /Form -->*/
@@ -208,7 +205,6 @@
 
 /*# /Tiles -->*/
 
-/*# More accessories button -->*/
 .accessories-button {
     display: flex;
     justify-content: center;

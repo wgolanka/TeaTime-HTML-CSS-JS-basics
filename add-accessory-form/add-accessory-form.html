@@ -24,24 +24,25 @@
 <div class="nav-container">
     <ul class="nav-list">
         <li class="nav-list-item">
-            <button class="material-icons">home</button>
+            <button onclick="location.href='../homepage/homepage.html'" class="material-icons">home</button>
             <div class="nav-container">
-                <a class="nav-text" href="#Home">Home</a>
+                <a class="nav-text" onclick="location.href='../homepage/homepage.html'">Home</a>
             </div>
         </li>
 
         <li class="nav-list-item">
-            <button class="material-icons">account_circle</button>
+            <button onclick="location.href='../user-profile/user-profile.html'" class="material-icons">account_circle
+            </button>
             <div class="nav-container">
-                <a class="nav-text" href="#Profile">Profile</a>
+                <a class="nav-text" onclick="location.href='../user-profile/user-profile.html'">Profile</a>
             </div>
         </li>
 
         <li class="nav-list-item">
-            <button class="material-icons">add</button>
-
+            <button onclick="location.href='../add-tea-form/add-tea-form.html'" class="material-icons">add</button>
             <div class="nav-container">
-                <a class="nav-text" href="#Add Tea">Add tea</a>
+                <a class="nav-text" onclick="location.href='../add-tea-form/add-tea-form.html'" href="#Add Tea">Add
+                    tea</a>
             </div>
         </li>
     </ul>
@@ -56,38 +57,61 @@
 
 <!-- Form -->
 <div class="form-add-accessory">
-    <form class="form">
+    <form class="form" id="accessory_form" method="post">
         <ul class="form-wrapper">
+            <li class="fields-info">
+                <p>Fields with * are obligatory</p>
+            </li>
             <li class="form-row">
-                <label class="label" for="name">Name:</label>
+                <label class="label" for="name">*Name:</label>
                 <input class="form-input" id="name" type="text" name="Name" placeholder="Green Sencha">
+            </li>
+            <li>
+                <div id="name-error" class="error"></div>
             </li>
             <li class="form-row">
                 <label class="label" for="is-necessary">Is necessary?</label>
                 <div class="checkbox-necessary">
-                    <input type="checkbox" value="2" id="is-necessary" name="Checkbox" />
+                    <input type="checkbox" value="2" id="is-necessary" name="Checkbox"/>
                     <label class="checkbox-label" for="is-necessary"></label>
                 </div>
             </li>
             <li class="form-row">
-                <label class="label" for="price-range">Price range:</label>
-                <div class="price-range">
-                    <input class="form-input" id="price-range" type="text" name="Price range: " placeholder="from 12 pln">
-                    <br>
-                    <input class="form-input" id="price-range-sec" type="text" name="Price range: " placeholder="to 24 pln">
-                </div>
+                <label class="label" for="price-from">*Price from:</label>
+                <input class="form-input" id="price-from" type="text" name="priceFrom" placeholder="from 12 pln">
+
+            </li>
+            <li>
+                <div id="price-from-error" class="error"></div>
             </li>
             <li class="form-row">
-                <label class="label" for="description">Description:</label>
-                <textarea class="form-text-area" placeholder="This accessory will help you make the best tea of your life!" id="description" name="Description"></textarea>
+                <label class="label" for="price-to">*Price to:</label>
+                <input class="form-input" id="price-to" name="priceTo" type="text"
+                       placeholder="to 24 pln">
+            </li>
+            <li>
+                <div id="price-to-error" class="error"></div>
             </li>
             <li class="form-row">
-                <label class="label" for="image-link">Image link:</label>
-                <textarea class="form-text-area" id="image-link" placeholder="https://i.imgur.com/t04DtjZ.jpg"
-                          name="Image link"></textarea>
+                <label class="label" for="description">*Description:</label>
+                <textarea class="form-text-area"
+                          placeholder="This accessory will help you make the best tea of your life!" id="description"
+                          name="Description"></textarea>
+            </li>
+            <li>
+                <div id="desc-error" class="error"></div>
             </li>
             <li class="form-row">
-                <input class="form-submit-button" type="submit" value="Submit">
+                <label class="label" for="image-link"> Image link:</label>
+                <input class="form-text-area" id="image-link" type="url" placeholder="https://i.imgur.com/t04DtjZ.jpg"
+                       name="Image link">
+            </li>
+            <li>
+                <div id="image-link-error" class="error"></div>
+            </li>
+            <li class="form-row">
+                <div id="error-summary" class="error-summary"></div>
+                <button class="form-submit-button" type="submit" id="submit-button">Submit</button>
             </li>
         </ul>
     </form>
@@ -96,9 +120,10 @@
 
 <!-- Footer -->
 <footer class="footer">
-    <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
+    <p class="footer-border">By Wiktoria Golanka. aka Senior FrontEnd Developer &#128540;. All rights reserved.</p>
 </footer>
 <!-- /Footer -->
 
+<script src="validate-accessories-form.js"></script>
 </body>
 </html>

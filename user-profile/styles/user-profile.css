@@ -179,6 +179,13 @@
 
 /*# /Tiles -->*/
 
+.all-accessories-title {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
 /*# Pagination -->*/
 .pagination {
     display: flex;
@@ -203,6 +210,19 @@
 .pagination-item:hover {
     background-color: #ddd;
 }
+
+.accessories-tiles-container {
+    margin-top: 50px;
+}
+
+/*# More accessories button -->*/
+.accessories-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 28px;
+}
+/*# /More accessories button -->*/
 
 /*# /Pagination -->*/
 
