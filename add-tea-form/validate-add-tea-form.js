@@ -4,7 +4,6 @@ const harvestSeason = document.getElementById('harvest-season');
 const caffeineContent = document.getElementById('caffeine-content');
 const description = document.getElementById('description');
 const imageLink = document.getElementById('image-link');
-const submitButton = document.getElementById('submit-button');
 
 const nameError = 'name-error';
 const originCountryError = 'origin-country-error';
@@ -21,9 +20,15 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-submitButton.addEventListener('click', (event) => {
-    event.preventDefault();
+function validateForm() {
+    validate();
+    if (!errorCount) {
+        alert("Submitted successfully!")
+    }
+    return !errorCount;
+}
 
+function validate() {
     errorCount = 0;
     let isNameOk = simpleValidate(name, nameError, "Name");
     let isOriginCountryOk = simpleValidate(originCountry, originCountryError, "Origin country");
@@ -34,7 +39,7 @@ submitButton.addEventListener('click', (event) => {
 
     scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeasonOk, isCaffeineContentOk, isDescOk, isImageLinkOk);
     showErrorSummary();
-});
+}
 
 function simpleValidate(input, errorId, name) {
     if (isFieldBlank(input)) {
@@ -52,7 +57,7 @@ function simpleValidate(input, errorId, name) {
 }
 
 function isFieldBlank(input) {
-    return input.value.trim().length === 0;
+    return !input.value.trim().length;
 }
 
 function containsSpecialCharacters(input) {

@@ -20,7 +20,7 @@ let errorCount = 0;
 
 function validateForm() {
     validate();
-    if(!errorCount){
+    if (!errorCount) {
         alert("Submitted successfully!")
     }
     return !errorCount;
@@ -58,7 +58,7 @@ function validateName() {
 }
 
 function isFieldBlank(input) {
-    return input.value.trim().length === 0;
+    return !input.value.trim().length;
 }
 
 function containsSpecialCharacters(input) {

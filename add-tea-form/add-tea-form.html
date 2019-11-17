@@ -50,14 +50,15 @@
 <!-- /Navigation -->
 
 <!-- Header Form -->
-<div class="form-header">
+<div class="form-header" >
     <p class="header">Add your tea</p>
 </div>
 <!-- /Header Form -->
 
 <!-- Form -->
 <div class="form-add-tea">
-    <form class="form">
+    <form class="form" id="add-tea-form" method="post" action="/somewhere"
+          onsubmit="return validateForm();">
         <ul class="form-wrapper">
             <li class="fields-info">
                 <p>Fields with * are obligatory</p>
