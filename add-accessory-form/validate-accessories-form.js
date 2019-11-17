@@ -20,12 +20,10 @@ let errorCount = 0;
 
 function validateForm() {
     validate();
-
-    if (errorCount !== 0) {
-        return false;
+    if(!errorCount){
+        alert("Submitted successfully!")
     }
-    alert("Validations successful!");
-    return true;
+    return !errorCount;
 }
 
 function validate() {
