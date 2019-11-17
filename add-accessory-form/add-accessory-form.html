@@ -57,7 +57,8 @@
 
 <!-- Form -->
 <div class="form-add-accessory">
-    <form class="form" id="accessory_form" method="post">
+    <form class="form" id="accessory_form" method="post" action="/somewhere"
+          onsubmit="return validateForm();">
         <ul class="form-wrapper">
             <li class="fields-info">
                 <p>Fields with * are obligatory</p>

@@ -2,7 +2,7 @@ const name = document.getElementById('name');
 const priceFrom = document.getElementById('price-from');
 const priceTo = document.getElementById('price-to');
 const description = document.getElementById('description');
-const submitButton = document.getElementById('submit-button');
+const form = document.getElementById('accessory_form');
 const imageLink = document.getElementById('image-link');
 
 const nameError = 'name-error';
@@ -19,9 +19,17 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-submitButton.addEventListener('click', (event) => { //TODO autofocus on field when wrong, sum errors
-    event.preventDefault();
+function validateForm() {
+    validate();
 
+    if (errorCount !== 0) {
+        return false;
+    }
+    alert("Validations successful!");
+    return true;
+}
+
+function validate() {
     errorCount = 0;
     let isNameOk = validateName();
     let isPriceFromOk = validatePrice(priceFrom, priceFromError, "Price from");
@@ -35,7 +43,7 @@ submitButton.addEventListener('click', (event) => { //TODO autofocus on field wh
 
     scrollToFirstElementFailed(isNameOk, isPriceFromOk, isPriceToOk, isPriceRangeOk, isDescOk, isImageLinkOk);
     showErrorSummary();
-});
+}
 
 function validateName() {
     if (isFieldBlank(name)) {
@@ -53,7 +61,7 @@ function validateName() {
 }
 
 function isFieldBlank(input) {
-    return input.value.length === 0;
+    return input.value.trim().length === 0;
 }
 
 function containsSpecialCharacters(input) {

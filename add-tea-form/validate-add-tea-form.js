@@ -52,7 +52,7 @@ function simpleValidate(input, errorId, name) {
 }
 
 function isFieldBlank(input) {
-    return input.value.length === 0;
+    return input.value.trim().length === 0;
 }
 
 function containsSpecialCharacters(input) {
