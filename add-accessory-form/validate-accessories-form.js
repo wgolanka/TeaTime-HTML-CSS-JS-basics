@@ -2,7 +2,6 @@ const name = document.getElementById('name');
 const priceFrom = document.getElementById('price-from');
 const priceTo = document.getElementById('price-to');
 const description = document.getElementById('description');
-const form = document.getElementById('accessory_form');
 const imageLink = document.getElementById('image-link');
 
 const nameError = 'name-error';
