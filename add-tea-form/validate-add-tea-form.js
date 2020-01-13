@@ -20,13 +20,23 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-function validateForm() {
-    validate();
-    if (!errorCount) {
-        alert("Submitted successfully!")
-    }
-    return !errorCount;
-}
+// function validateForm() {
+//     validate();
+//     if (!errorCount) {
+//         alert("Submitted successfully!");
+//         $.post( "http://127.0.0.1:8080/teatime/tea/add", $( "#add-tea-form" ).serialize() );
+//     }
+//
+// }
+
+$('form').submit(function(e){
+    e.preventDefault();
+    let data = $( "#add-tea-form" ).serialize();
+    console.log("data: " + data);
+
+    $.post( "http://127.0.0.1:8080/teatime/tea/add", data );
+    //TODO validate and alert on success or fail
+});
 
 function validate() {
     errorCount = 0;
