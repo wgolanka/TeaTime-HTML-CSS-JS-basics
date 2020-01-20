@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="styles/add-tea-form.css">
     <title>TIN - Mini Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body class="body">
 
@@ -57,43 +58,42 @@
 
 <!-- Form -->
 <div class="form-add-tea">
-    <form class="form" id="add-tea-form" method="post" action="/somewhere"
-          onsubmit="return validateForm();">
+    <form class="form" id="add-tea-form" method="post">
         <ul class="form-wrapper">
             <li class="fields-info">
                 <p>Fields with * are obligatory</p>
             </li>
             <li class="form-row">
-                <label class="label" for="name">*Name:</label>
-                <input class="form-input" id="name" type="text" name="Name" placeholder="Green Sencha">
+                <label class="label" for="name">Name:</label>
+                <input class="form-input" id="name" type="text" name="name" placeholder="Green Sencha">
             </li>
             <li>
                 <div id="name-error" class="error"></div>
             </li>
             <li class="form-row">
                 <label class="label" for="origin-country">*Origin country:</label>
-                <input class="form-input" id="origin-country" type="text" name="Origin country" placeholder="Japan">
+                <input class="form-input" id="origin-country" type="text" name="originCountry" placeholder="Japan">
             </li>
             <li>
                 <div id="origin-country-error" class="error"></div>
             </li>
             <li class="form-row">
                 <label class="label" for="harvest-season">*Harvest season:</label>
-                <input class="form-input" id="harvest-season" type="text" name="Harvest season" placeholder="Autumn">
+                <input class="form-input" id="harvest-season" type="text" name="harvestSeason" placeholder="Autumn">
             </li>
             <li>
                 <div id="harvest-season-error" class="error"></div>
             </li>
             <li class="form-row">
                 <label class="label" for="caffeine-content">Caffeine content:</label>
-                <input class="form-input" id="caffeine-content" type="text" name="Caffeine content" placeholder="12 mg">
+                <input class="form-input" id="caffeine-content" type="text" name="caffeineContent" placeholder="12 mg">
             </li>
             <li>
                 <div id="caffeine-content-error" class="error"></div>
             </li>
             <li class="form-row">
                 <label class="label" for="description">*Description:</label>
-                <textarea class="form-text-area" id="description" name="Description" placeholder="This tea is harvested
+                <textarea class="form-text-area" id="description" name="description" placeholder="This tea is harvested
 only during moonset! The taste is incredible!"></textarea>
             </li>
             <li>
@@ -102,7 +102,7 @@ only during moonset! The taste is incredible!"></textarea>
             <li class="form-row">
                 <label class="label" for="image-link">Image link:</label>
                 <textarea class="form-text-area" id="image-link" placeholder="https://i.imgur.com/t04DtjZ.jpg"
-                          name="Image link"></textarea>
+                          name="imageLink"></textarea>
             </li>
             <li>
                 <div id="image-link-error" class="error"></div>
