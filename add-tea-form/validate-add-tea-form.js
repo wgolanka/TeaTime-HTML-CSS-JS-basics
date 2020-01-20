@@ -20,28 +20,22 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-// function validateForm() {
-//     validate();
-//     if (!errorCount) {
-//         alert("Submitted successfully!");
-//         $.post( "http://127.0.0.1:8080/teatime/tea/add", $( "#add-tea-form" ).serialize() );
-//     }
-//
-// }
-
 $('form').submit(function(e){
     e.preventDefault();
     let data = $( "#add-tea-form" ).serialize();
     console.log("data: " + data);
+    validate();
+    if (!errorCount) {
+        alert("Submitted successfully!");
+        $.post( "http://127.0.0.1:8080/teatime/tea/add", data );
+    }
 
-    $.post( "http://127.0.0.1:8080/teatime/tea/add", data );
-    //TODO validate and alert on success or fail
 });
 
 function validate() {
     errorCount = 0;
     let isNameOk = simpleValidate(name, nameError, "Name");
-    let isOriginCountryOk = simpleValidate(originCountry, originCountryError, "Origin country");
+    let isOriginCountryOk = simpleValidate(originCountry, originCountryError, "Origin country"); //TODO check if country exist
     let isHarvestSeasonOk = simpleValidate(harvestSeason, harvestSeasonError, "Harvest season");
     let isCaffeineContentOk = validateCaffeineContent();
     let isDescOk = validateDescription();
