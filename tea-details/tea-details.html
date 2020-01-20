@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="styles/tea-details.css">
     <title>TIN - Mini Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body class="body">
 
@@ -59,7 +60,7 @@
 <div class="tea-info">
     <!-- Avatar-->
     <div class="user-avatar">
-        <img class="avatar" src="../images/tea-pic.png"/>
+        <img id="tea-image" class="avatar" src="../images/tea-pic.png"/>
     </div>
     <!-- /Avatar -->
 
@@ -69,19 +70,19 @@
             <ul class="form-wrapper">
                 <li class="form-row">
                     <label class="label" for="name">Name:</label>
-                    <p class="form-paragraph" id="name">Green Sencha</p>
+                    <p class="form-paragraph" id="name"> </p>
                 </li>
                 <li class="form-row">
                     <label class="label" for="origin-country">Origin country:</label>
-                    <p class="form-paragraph" id="origin-country">Japan</p>
+                    <p class="form-paragraph" id="origin-country"> </p>
                 </li>
                 <li class="form-row">
-                    <label class="label" for="harvest-season">Origin country:</label>
-                    <p class="form-paragraph" id="harvest-season">Summer, autumn</p>
+                    <label class="label" for="harvest-seasons">Harvest seasons:</label>
+                    <p class="form-paragraph" id="harvest-seasons"> </p>
                 </li>
                 <li class="form-row">
-                    <label class="label" for="description">Description:</label>
-                    <p class="form-paragraph" id="description">So tasty and fresh!</p>
+                    <label class="label" for="caffeine-content">Caffeine content:</label>
+                    <p class="form-paragraph" id="caffeine-content"> </p>
                 </li>
                 <li class="form-row">
                     <input class="form-submit-button" onclick="location.href='../edit-tea-form/edit-tea-form.html'"
@@ -228,5 +229,6 @@
 </footer>
 <!-- /Footer -->
 
+<script src="tea-details.js"></script>
 </body>
 </html>

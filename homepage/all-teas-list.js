@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("ready");
+    console.log("ready - homepage");
 
     $.get("http://localhost:8080/teatime/tea/all", function (data) {
         console.log("Data Loaded: " + data[0].id);
@@ -9,6 +9,7 @@ $(document).ready(function () {
         const fragment = document.createDocumentFragment();
 
         for (let i = 0; i < data.length; i++) {
+
             let divCard = document.createElement("div");
             divCard.className = "card";
 
@@ -39,6 +40,13 @@ $(document).ready(function () {
             divCard.appendChild(cardTitle);
             divCard.appendChild(img);
             divCard.appendChild(divCardTextContainer);
+            divCard.id = data[i].id;
+
+            divCard.onclick = function(){
+                let url = "../tea-details/tea-details.html" +  "?id=" + encodeURIComponent(divCard.id);
+                location.href = url;
+                console.log("on click button tea details url: " + url)
+            };
 
             fragment.appendChild(divCard);
         }
