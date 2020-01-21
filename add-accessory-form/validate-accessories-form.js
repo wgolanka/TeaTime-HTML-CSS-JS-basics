@@ -19,14 +19,14 @@ const specialCharactersErrorMsg = " can't contain special characters";
 let errorCount = 0;
 
 function validateForm() {
-    validate();
+    validateAccessory();
     if (!errorCount) {
         alert("Submitted successfully!")
     }
     return !errorCount;
 }
 
-function validate() {
+function validateAccessory() {
     errorCount = 0;
     let isNameOk = validateName();
     let isPriceFromOk = validatePrice(priceFrom, priceFromError, "Price from");

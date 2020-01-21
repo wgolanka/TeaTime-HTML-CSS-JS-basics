@@ -16,30 +16,44 @@ $(document).ready(function () {
         $.get(url, function (data) {
 
             const name = document.getElementById("name");
-            name.innerText = data.name;
+            name.value = data.name;
 
             const originCountry = document.getElementById("origin-country");
-            originCountry.innerText = data.originCountry;
+            originCountry.value = data.originCountry;
 
             const harvestSeasons = document.getElementById("harvest-seasons");
-            harvestSeasons.innerText = data.harvestSeasons;
+            harvestSeasons.value = data.harvestSeasons;
 
             const caffeineContent = document.getElementById("caffeine-content");
-            caffeineContent.innerText = data.caffeineContent + " mg";
+            caffeineContent.value = data.caffeineContent;
 
-            const teaImage = document.getElementById("tea-image");
-            teaImage.src = data.imageLink;
-            teaImage.style = "width:80%";
+            const teaImage = document.getElementById("image-link");
+            teaImage.value = data.imageLink;
 
-            const editTeaButton = document.getElementById("edit-tea-butt");
-            editTeaButton.onclick = function () {
-                let url = "../edit-tea-form/edit-tea-form.html" + "?id=" + encodeURIComponent(data.id);
-                location.href = url;
-                console.log("on click button edit tea details url: " + url)
-            };
+            const editTeaDiv = document.getElementById("edit-tea-div");
+            editTeaDiv.setAttribute("teaId", data.id)
         });
     };
 
+});
+
+//TODO add validation
+
+$('form').submit(function(e){
+    e.preventDefault();
+    const editTeaDiv = document.getElementById("edit-tea-div");
+    let data = $( "#edit-tea-form" ).serialize();
+    data = data + "&id=" + encodeURIComponent(editTeaDiv.getAttribute("teaId"));
+    console.log("data: " + data);
+
+    $.ajax({
+        url: 'http://127.0.0.1:8080/teatime/tea/update',
+        type: 'PUT',
+        data: data,
+        success: function(data) {
+            alert('Tea updated!');
+        }
+    });
 });
 
 
