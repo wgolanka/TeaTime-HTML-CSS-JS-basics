@@ -18,13 +18,24 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-function validateForm() {
+$('form').submit(function(e){
+    e.preventDefault();
+    let data = $( "#add-accessory_form" ).serialize();
+    console.log("data: " + data);
     validateAccessory();
     if (!errorCount) {
-        alert("Submitted successfully!")
+        alert("Submitted successfully!");
+        $.post( "http://127.0.0.1:8080/teatime/accessory/add", data );
     }
-    return !errorCount;
-}
+});
+
+// function validateForm() {
+//     validateAccessory();
+//     if (!errorCount) {
+//         alert("Submitted successfully!")
+//     }
+//     return !errorCount;
+// }
 
 function validateAccessory() {
     errorCount = 0;

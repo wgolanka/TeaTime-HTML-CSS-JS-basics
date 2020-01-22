@@ -29,7 +29,6 @@ $('form').submit(function(e){
         alert("Submitted successfully!");
         $.post( "http://127.0.0.1:8080/teatime/tea/add", data );
     }
-
 });
 
 function validateTea() {

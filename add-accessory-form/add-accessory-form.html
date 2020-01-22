@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="styles/add-accessory-form.css">
     <title>TIN - Mini Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body class="body">
 
@@ -57,15 +58,14 @@
 
 <!-- Form -->
 <div class="form-add-accessory">
-    <form class="form" id="add-accessory_form" method="post" action="/somewhere"
-          onsubmit="return validateForm();">
+    <form class="form" id="add-accessory_form" method="post">
         <ul class="form-wrapper">
             <li class="fields-info">
                 <p>Fields with * are obligatory</p>
             </li>
             <li class="form-row">
                 <label class="label" for="name">*Name:</label>
-                <input class="form-input" id="name" type="text" name="Name" placeholder="Green Sencha">
+                <input class="form-input" id="name" type="text" name="name" placeholder="Brewer">
             </li>
             <li>
                 <div id="name-error" class="error"></div>
@@ -73,7 +73,7 @@
             <li class="form-row">
                 <label class="label" for="is-necessary">Is necessary?</label>
                 <div class="checkbox-necessary">
-                    <input type="checkbox" value="2" id="is-necessary" name="Checkbox"/>
+                    <input type="checkbox" value="2" id="is-necessary" name="isNecessary"/>
                     <label class="checkbox-label" for="is-necessary"></label>
                 </div>
             </li>
@@ -97,7 +97,7 @@
                 <label class="label" for="description">*Description:</label>
                 <textarea class="form-text-area"
                           placeholder="This accessory will help you make the best tea of your life!" id="description"
-                          name="Description"></textarea>
+                          name="description"></textarea>
             </li>
             <li>
                 <div id="desc-error" class="error"></div>
@@ -105,7 +105,7 @@
             <li class="form-row">
                 <label class="label" for="image-link"> Image link:</label>
                 <input class="form-text-area" id="image-link" type="url" placeholder="https://i.imgur.com/t04DtjZ.jpg"
-                       name="Image link">
+                       name="imageLink">
             </li>
             <li>
                 <div id="image-link-error" class="error"></div>
