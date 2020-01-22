@@ -31,11 +31,34 @@ $(document).ready(function () {
             teaImage.src = data.imageLink;
             teaImage.style = "width:80%";
 
+            const idParam = "?id=" + encodeURIComponent(data.id);
+
             const editTeaButton = document.getElementById("edit-tea-butt");
             editTeaButton.onclick = function () {
                 let url = "../edit-tea-form/edit-tea-form.html" + "?id=" + encodeURIComponent(data.id);
                 location.href = url;
                 console.log("on click button edit tea details url: " + url)
+            };
+
+            let urlDelete =  "http://127.0.0.1:8080/teatime/tea/delete" + idParam;
+
+            console.log(urlDelete);
+
+            const deleteTeaButton = document.getElementById("delete-tea-button");
+            deleteTeaButton.onclick = function () {
+                let url = "../homepage/homepage.html";
+
+                $.ajax({
+                    url: urlDelete,
+                    type: 'DELETE',
+                    success: function () {
+                        alert('Tea deleted successfully!');
+                        location.href = url;
+                    }
+                });
+
+                alert('Something went wrong :( Please try again later!');
+                console.log("on click button delete tea button redirect to url: " + url)
             };
         });
     };

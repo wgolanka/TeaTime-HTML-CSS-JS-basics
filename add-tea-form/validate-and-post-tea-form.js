@@ -41,7 +41,7 @@ function validateTea() {
     // let isDescOk = validateDescription(); //TODO remove desc from here
     let isImageLinkOk = validateImageLink();
 
-    scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeasonOk, isCaffeineContentOk, isDescOk, isImageLinkOk);
+    scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeasonOk, isCaffeineContentOk, isImageLinkOk);
     showErrorSummary();
 }
 
@@ -148,8 +148,8 @@ function scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeason
         harvestSeason.scrollIntoView()
     } else if (!isCaffeineContentOk) {
         caffeineContent.scrollIntoView()
-    } else if (!isDescOk) {
-        description.scrollIntoView()
+    // } else if (!isDescOk) {
+    //     description.scrollIntoView()
     } else if (!isImageLinkOk) {
         imageLink.scrollIntoView()
     }
