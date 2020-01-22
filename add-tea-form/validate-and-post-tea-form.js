@@ -24,7 +24,7 @@ $('form').submit(function(e){
     e.preventDefault();
     let data = $( "#add-tea-form" ).serialize();
     console.log("data: " + data);
-    validate();
+    validateTea();
     if (!errorCount) {
         alert("Submitted successfully!");
         $.post( "http://127.0.0.1:8080/teatime/tea/add", data );
@@ -32,16 +32,16 @@ $('form').submit(function(e){
 
 });
 
-function validate() {
+function validateTea() {
     errorCount = 0;
     let isNameOk = simpleValidate(name, nameError, "Name");
     let isOriginCountryOk = simpleValidate(originCountry, originCountryError, "Origin country"); //TODO check if country exist
     let isHarvestSeasonOk = simpleValidate(harvestSeason, harvestSeasonError, "Harvest season");
     let isCaffeineContentOk = validateCaffeineContent();
-    let isDescOk = validateDescription();
+    // let isDescOk = validateDescription(); //TODO remove desc from here
     let isImageLinkOk = validateImageLink();
 
-    scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeasonOk, isCaffeineContentOk, isDescOk, isImageLinkOk);
+    scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeasonOk, isCaffeineContentOk, isImageLinkOk);
     showErrorSummary();
 }
 
@@ -148,8 +148,8 @@ function scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeason
         harvestSeason.scrollIntoView()
     } else if (!isCaffeineContentOk) {
         caffeineContent.scrollIntoView()
-    } else if (!isDescOk) {
-        description.scrollIntoView()
+    // } else if (!isDescOk) {
+    //     description.scrollIntoView()
     } else if (!isImageLinkOk) {
         imageLink.scrollIntoView()
     }
