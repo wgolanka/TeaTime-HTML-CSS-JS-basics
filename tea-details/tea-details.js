@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("ready - details screen");
+    console.log("ready - tea details screen");
 
     window.onload = function () {
 

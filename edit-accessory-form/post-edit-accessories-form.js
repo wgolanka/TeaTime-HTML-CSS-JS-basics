@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         const url = "http://localhost:8080/teatime/accessory/" + accessoryId;
 
-        console.log("details final url: " + url);
+        console.log(" accessory edit final url: " + url);
         $.get(url, function (data) {
 
             const name = document.getElementById("name");
@@ -39,17 +39,20 @@ $(document).ready(function () {
             const isNecessary = document.getElementById("is-necessary");
             isNecessary.value = data.isNecessary;
 
-            const priceFrom = document.getElementById("price-from");
+            console.log(" accessory price from : " + data.priceFrom);
+            console.log(" accessory price to : " +  data.priceTo);
+
+            const priceFrom = document.getElementById("price-range");
             priceFrom.value = data.priceFrom;
 
-            const priceTo = document.getElementById("price-to");
+            const priceTo = document.getElementById("price-range-sec");
             priceTo.value = data.priceTo;
 
             const description = document.getElementById("description");
             description.value = data.description;
 
-            const teaImage = document.getElementById("image-link");
-            teaImage.value = data.imageLink;
+            const accessoryImage = document.getElementById("image-link");
+            accessoryImage.value = data.imageLink;
 
             const editAccessoryDiv = document.getElementById("edit-accessory-div");
             editAccessoryDiv.setAttribute("accessoryId", data.id)
@@ -78,6 +81,21 @@ $('form').submit(function(e){
         }
     });
 });
+
+function getPathParamsArray() {
+    const queryString = new Array();
+    if (queryString.length == 0) {
+        if (window.location.search.split('?').length > 1) {
+            const params = window.location.search.split('?')[1].split('&');
+            for (let i = 0; i < params.length; i++) {
+                let key = params[i].split('=')[0];
+                let value = decodeURIComponent(params[i].split('=')[1]);
+                queryString[key] = value;
+            }
+        }
+    }
+    return queryString;
+}
 
 // function validateForm() {
 //     validateAccessory();
