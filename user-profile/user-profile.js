@@ -56,7 +56,7 @@ $(document).ready(function () {
             fragment.appendChild(liCard);
         }
 
-        // list.appendChild(fragment);
+        list.appendChild(fragment);
     });
 
     $.get("http://localhost:8080/teatime/accessory/all", function (data) {
