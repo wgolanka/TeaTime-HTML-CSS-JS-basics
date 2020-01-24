@@ -62,12 +62,20 @@ $(document).ready(function () {
                 console.log("on click button delete tea button redirect to url: " + url)
             };
 
-            const addRemAccessoryButton = document.getElementById("add-acc-to-tea-button");
-            addRemAccessoryButton.onclick = function () {
+            const addAccessoryButton = document.getElementById("add-acc-to-tea-button");
+            addAccessoryButton.onclick = function () {
                 let url = "../add-accessory-to-tea/add-accessory-to-tea.html" + "?id=" + encodeURIComponent(data.id);
                 location.href = url;
-                console.log("on click button add remove accessories button redirect to url: " + url)
+                console.log("on click button add accessories button redirect to url: " + url)
             };
+
+            const removeAccessoryButton = document.getElementById("remove-acc-from-tea-button");
+            removeAccessoryButton.onclick = function () {
+                let url = "../remove-accessory-from-tea/remove-accessory-from-tea.html" + "?id=" + encodeURIComponent(data.id);
+                location.href = url;
+                console.log("on click button remove accessories button redirect to url: " + url)
+            };
+
         });
 
         let getTeaAccessoriesUrl = "http://localhost:8080/teatime/accessory/byTea/" + teaId;
