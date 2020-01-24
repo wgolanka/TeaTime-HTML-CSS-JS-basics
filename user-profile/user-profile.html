@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="styles/user-profile.css">
     <title>TIN - Mini Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body class="body">
 
@@ -96,7 +97,7 @@
     <h2 class="all-teas-title">Your teas</h2>
     <!-- /All teas title -->
     <div class="tiles">
-        <ul class="tiles-list">
+        <ul class="tiles-list" id="user-teas-ul">
             <li class="tiles-item">
                 <div class="card" onclick="location.href='../tea-details/tea-details.html'">
                     <p class="card-title"><b>China Yellow Bencha</b></p>
@@ -185,79 +186,8 @@
     <p class="all-accessories-title">Your accessories</p>
     <!-- /All teas title -->
     <div class="tiles">
-        <ul class="tiles-list">
-            <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
-                    <p class="card-title"><b>Silver Stainer 3.0</b></p>
-                    <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
-                    <div class="card-text-container">
-                        <p>Description: I love to use it with my tea</p>
-                        <p>Is necessary: No</p>
-                        <p>Price range : 10-500pln</p>
-                    </div>
-                    <button class="card-button">Click to see more!</button>
-                </div>
-            </li>
-            <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
-                    <p class="card-title"><b>Mesh Ball Infuser</b></p>
-                    <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
-                    <div class="card-text-container">
-                        <p>Description: Really helpful and easy to use</p>
-                        <p>Is necessary: Yes</p>
-                        <p>Price range : 3-100pln</p>
-                    </div>
-                    <button class="card-button">Click to see more!</button>
-                </div>
-            </li>
-            <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
-                    <p class="card-title"><b>Silver Stainer 3.0</b></p>
-                    <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
-                    <div class="card-text-container">
-                        <p>Description: I love to use it with my tea</p>
-                        <p>Is necessary: No</p>
-                        <p>Price range : 10-500pln</p>
-                    </div>
-                    <button class="card-button">Click to see more!</button>
-                </div>
-            </li>
-            <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
-                    <p class="card-title"><b>Mesh Ball Infuser</b></p>
-                    <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
-                    <div class="card-text-container">
-                        <p>Description: Really helpful and easy to use</p>
-                        <p>Is necessary: Yes</p>
-                        <p>Price range : 3-100pln</p>
-                    </div>
-                    <button class="card-button">Click to see more!</button>
-                </div>
-            </li>
-            <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
-                    <p class="card-title"><b>Silver Stainer 3.0</b></p>
-                    <img class="tiles-img" src="../images/stainer.jpg" alt="Tea Stainer" style="width:25%">
-                    <div class="card-text-container">
-                        <p>Description: I love to use it with my tea</p>
-                        <p>Is necessary: No</p>
-                        <p>Price range : 10-500pln</p>
-                    </div>
-                    <button class="card-button">Click to see more!</button>
-                </div>
-            </li>
-            <li class="tiles-item">
-                <div class="card" onclick="location.href='../accessory-details/accessory-details.html'">
-                    <p class="card-title"><b>Mesh Ball Infuser</b></p>
-                    <img class="tiles-img" src="../images/infuser.png" alt="Tea Infuser" style="width:25%">
-                    <div class="card-text-container">
-                        <p>Description: Really helpful and easy to use</p>
-                        <p>Is necessary: Yes</p>
-                        <p>Price range : 3-100pln</p>
-                    </div>
-                    <button class="card-button">Click to see more!</button>
-                </div>
-            </li>
+        <ul class="tiles-list" id="user-accessories-ul">
+
         </ul>
     </div>
 </div>
@@ -286,5 +216,6 @@
 </footer>
 <!-- /Footer -->
 
+<script src="user-profile.js"></script>
 </body>
 </html>

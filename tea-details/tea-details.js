@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("ready - details screen");
+    console.log("ready - tea details screen");
 
     window.onload = function () {
 
@@ -54,11 +54,19 @@ $(document).ready(function () {
                     success: function () {
                         alert('Tea deleted successfully!');
                         location.href = url;
+                    },
+                    error: function(){
+                        alert('Something went wrong :( Please try again later!');
                     }
                 });
-
-                alert('Something went wrong :( Please try again later!');
                 console.log("on click button delete tea button redirect to url: " + url)
+            };
+
+            const addRemAccessoryButton = document.getElementById("add-rem-acc-button");
+            addRemAccessoryButton.onclick = function () {
+                let url = "../add-accessory-to-tea/add-accessory-to-tea.html" + "?id=" + encodeURIComponent(data.id);
+                location.href = url;
+                console.log("on click button add remove accessories button redirect to url: " + url)
             };
         });
     };

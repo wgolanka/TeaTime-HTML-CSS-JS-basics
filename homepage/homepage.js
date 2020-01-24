@@ -10,6 +10,9 @@ $(document).ready(function () {
 
         for (let i = 0; i < data.length; i++) {
 
+            let liCard = document.createElement("li");
+            liCard.className = "tiles-item";
+
             let divCard = document.createElement("div");
             divCard.className = "card";
 
@@ -42,13 +45,14 @@ $(document).ready(function () {
             divCard.appendChild(divCardTextContainer);
             divCard.id = data[i].id;
 
-            divCard.onclick = function(){
-                let url = "../tea-details/tea-details.html" +  "?id=" + encodeURIComponent(divCard.id);
+            divCard.onclick = function () {
+                let url = "../tea-details/tea-details.html" + "?id=" + encodeURIComponent(divCard.id);
                 location.href = url;
                 console.log("on click button tea details url: " + url)
             };
 
-            fragment.appendChild(divCard);
+            liCard.appendChild(divCard);
+            fragment.appendChild(liCard);
         }
 
         list.appendChild(fragment);

@@ -16,15 +16,94 @@ const successValidationColor = '#b4b2b4';
 const blankFieldErrorMsg = " must be filled in";
 const specialCharactersErrorMsg = " can't contain special characters";
 
+$(document).ready(function () {
+    console.log("ready - edit accessory from screen");
+
+    window.onload = function () {
+
+        let queryString = getPathParamsArray();
+
+        let accessoryId = "id-fromurl";
+        if (queryString["id"] != null) {
+            accessoryId = queryString["id"];
+        }
+
+        const url = "http://localhost:8080/teatime/accessory/" + accessoryId;
+
+        console.log(" accessory edit final url: " + url);
+        $.get(url, function (data) {
+
+            const name = document.getElementById("name");
+            name.value = data.name;
+
+            const isNecessary = document.getElementById("is-necessary");
+            isNecessary.value = data.isNecessary;
+
+            console.log(" accessory price from : " + data.priceFrom);
+            console.log(" accessory price to : " +  data.priceTo);
+
+            const priceFrom = document.getElementById("price-range");
+            priceFrom.value = data.priceFrom;
+
+            const priceTo = document.getElementById("price-range-sec");
+            priceTo.value = data.priceTo;
+
+            const description = document.getElementById("description");
+            description.value = data.description;
+
+            const accessoryImage = document.getElementById("image-link");
+            accessoryImage.value = data.imageLink;
+
+            const editAccessoryDiv = document.getElementById("edit-accessory-div");
+            editAccessoryDiv.setAttribute("accessoryId", data.id)
+        });
+    };
+
+});
+
 let errorCount = 0;
 
-function validateForm() {
-    validateAccessory();
-    if (!errorCount) {
-        alert("Submitted successfully!")
+//TODO add validtion
+
+$('form').submit(function(e){
+    e.preventDefault();
+    const editAccessoryDiv = document.getElementById("edit-accessory-div");
+    let data = $( "#edit-accessory-form" ).serialize();
+    data = data + "&id=" + encodeURIComponent(editAccessoryDiv.getAttribute("accessoryId"));
+    console.log("data: " + data);
+
+    $.ajax({
+        url: 'http://127.0.0.1:8080/teatime/accessory/update',
+        type: 'PUT',
+        data: data,
+        success: function(data) {
+            alert('Accessory updated!');
+        }
+    });
+});
+
+function getPathParamsArray() {
+    const queryString = new Array();
+    if (queryString.length == 0) {
+        if (window.location.search.split('?').length > 1) {
+            const params = window.location.search.split('?')[1].split('&');
+            for (let i = 0; i < params.length; i++) {
+                let key = params[i].split('=')[0];
+                let value = decodeURIComponent(params[i].split('=')[1]);
+                queryString[key] = value;
+            }
+        }
     }
-    return !errorCount;
+    return queryString;
 }
+
+// function validateForm() {
+//     validateAccessory();
+//     if (!errorCount) {
+//         alert("Submitted successfully!")
+//     }
+//     return !errorCount;
+// }
 
 function validateAccessory() {
     errorCount = 0;
