@@ -42,28 +42,29 @@ $(document).ready(function () {
                 console.log("on click button edit access details url: " + url)
             };
 
-            //TODO delete
-            // const idParam = "?id=" + encodeURIComponent(data.id);
-            // let urlDelete =  "http://127.0.0.1:8080/teatime/accessory/delete" + idParam;
-            //
-            // console.log(urlDelete);
-            //
-            // const deleteTeaButton = document.getElementById("delete-accessory-button");
-            // deleteTeaButton.onclick = function () {
-            //     let url = "../homepage/homepage.html";
-            //
-            //     $.ajax({
-            //         url: urlDelete,
-            //         type: 'DELETE',
-            //         success: function () {
-            //             alert('Tea deleted successfully!');
-            //             location.href = url;
-            //         }
-            //     });
-            //
-            //     alert('Something went wrong :( Please try again later!');
-            //     console.log("on click button delete tea button redirect to url: " + url)
-            // };
+            const idParam = "?id=" + encodeURIComponent(data.id);
+            let urlDelete = "http://127.0.0.1:8080/teatime/accessory/delete" + idParam;
+
+            console.log(urlDelete);
+
+            const deleteTeaButton = document.getElementById("delete-accessory-button");
+            deleteTeaButton.onclick = function () {
+            let url = "../homepage/homepage.html";
+
+                $.ajax({
+                    url: urlDelete,
+                    type: 'DELETE',
+                    timeout: 5000,
+                    success: function () {
+                        alert('Accessory deleted successfully!');
+                        location.href = url;
+                    },
+                    error: function () {
+                        alert('Something went wrong :( Please try again later!');
+                    }
+                });
+                console.log("on click button delete tea button redirect to url: " + url)
+            };
         });
     };
 

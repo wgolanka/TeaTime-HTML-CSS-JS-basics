@@ -5,11 +5,14 @@ $(document).ready(function () {
     $.get("http://localhost:8080/teatime/tea/all", function (data) {
         console.log("Data Loaded: " + data[0].id);
 
-        const list = document.getElementById("all-teas-ul");
+        const list = document.getElementById("user-teas-ul");
 
         const fragment = document.createDocumentFragment();
 
         for (let i = 0; i < data.length; i++) {
+
+            let liCard = document.createElement("li");
+            liCard.className = "tiles-item";
 
             let divCard = document.createElement("div");
             divCard.className = "card";
@@ -49,7 +52,8 @@ $(document).ready(function () {
                 console.log("on click button tea details url: " + url)
             };
 
-            fragment.appendChild(divCard);
+            liCard.appendChild(divCard);
+            fragment.appendChild(liCard);
         }
 
         // list.appendChild(fragment);
@@ -63,6 +67,9 @@ $(document).ready(function () {
         const fragment = document.createDocumentFragment();
 
         for (let i = 0; i < data.length; i++) {
+
+            let liCard = document.createElement("li");
+            liCard.className = "tiles-item";
 
             let divCard = document.createElement("div");
             divCard.className = "card";
@@ -102,7 +109,8 @@ $(document).ready(function () {
                 console.log("on click button accessory details url: " + url)
             };
 
-            fragment.appendChild(divCard);
+            liCard.appendChild(divCard);
+            fragment.appendChild(liCard);
         }
 
         userAccessories.appendChild(fragment);
