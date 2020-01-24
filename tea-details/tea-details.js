@@ -62,7 +62,7 @@ $(document).ready(function () {
                 console.log("on click button delete tea button redirect to url: " + url)
             };
 
-            const addRemAccessoryButton = document.getElementById("add-rem-acc-button");
+            const addRemAccessoryButton = document.getElementById("add-acc-to-tea-button");
             addRemAccessoryButton.onclick = function () {
                 let url = "../add-accessory-to-tea/add-accessory-to-tea.html" + "?id=" + encodeURIComponent(data.id);
                 location.href = url;

@@ -160,10 +160,16 @@
     width: 350px;
     padding-left: 10px;
     padding-top: 10px;
-    background-image: url("http://clipart-library.com/new_gallery/40-404370_cross-png-spray-paint-x-png.png");
-    background-size: 30px;
-    background-repeat: no-repeat;
-    background-position-x: right;
+}
+
+.selected-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #b4b2b4;
+    transition: 0.3s;
+    height: 240px;
+    width: 350px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .card:hover {
