@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="styles/edit-tea-config-form.css">
     <title>TIN - Mini Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body class="body">
 
@@ -56,24 +57,28 @@
 <!-- /Header Form -->
 
 <!-- Form -->
-<div class="form-edit-tea">
-    <form class="form">
+<div class="form-edit-tea" id="div-edit-config-tea">
+    <form class="form" id="form-edit-config" method="post">
         <ul class="form-wrapper">
             <li class="form-row">
                 <label class="label" for="brewing-time">Brewing time:</label>
-                <input class="form-input" id="brewing-time" type="text" value="2m">
+                <input class="form-input" name="brewingTime" id="brewing-time" type="text" value="">
             </li>
             <li class="form-row">
                 <label class="label" for="ingredients">Ingredients:</label>
-                <input class="form-input" id="ingredients" type="text" value="Milk, honey">
+                <input class="form-input" name="ingredients" id="ingredients" type="text" value="">
             </li>
             <li class="form-row">
                 <label class="label" for="drinking-time">Drinking time:</label>
-                <input class="form-input" id="drinking-time" type="text" value="Morning">
+                <input class="form-input" name="drinkingTime" id="drinking-time" type="text" value="">
             </li>
             <li class="form-row">
-                <input class="form-submit-button" type="button" value="Submit"
-                       onclick="location.href='../tea-details/tea-details.html'">
+                <label class="label" for="description">Description:</label>
+                <input class="form-input" name="description" id="description" type="text" value="">
+            </li>
+            <li class="form-row">
+                <input class="form-submit-button" type="submit" value="Submit"
+                       id="submit-button">
             </li>
         </ul>
     </form>
@@ -85,6 +90,6 @@
     <p class="footer-border">By Wiktoria Golanka. All rights reserved.</p>
 </footer>
 <!-- /Footer -->
-
+<script src="edit-and-post-tea-config-form.js"></script>
 </body>
 </html>

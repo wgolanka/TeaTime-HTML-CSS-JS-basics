@@ -1,6 +1,33 @@
 $(document).ready(function () {
     console.log("ready - user-profile");
 
+    $.get("http://localhost:8080/teatime/user/current", function (data) {
+        console.log("Data Loaded, user id: " + data.id);
+
+        const email = document.getElementById("email");
+        email.innerText = data.emailAddress;
+
+        const username = document.getElementById("username");
+        username.innerText = data.nickname;
+
+        const description = document.getElementById("description");
+        description.innerText = data.description;
+
+        const accCreated = document.getElementById("account-created");
+        accCreated.innerText = data.accountCreated;
+
+        const avatar = document.getElementById("avatar-usr");
+        avatar.src = data.avatar;
+
+        const editProfileButton = document.getElementById("edit-profile-button");
+        editProfileButton.onclick = function(){
+            let url = '../edit-profile/edit-profile.html' +  "?id=" + encodeURIComponent(data.id);
+            location.href = url;
+            console.log("on click button tea edit profile url: " + url)
+        };
+    });
+
+
     //TODO show user teas
     $.get("http://localhost:8080/teatime/tea/all", function (data) {
         console.log("Data Loaded: " + data[0].id);
