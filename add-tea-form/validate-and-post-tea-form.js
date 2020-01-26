@@ -20,14 +20,19 @@ const specialCharactersErrorMsg = " can't contain special characters";
 
 let errorCount = 0;
 
-$('form').submit(function(e){
+$('form').submit(function (e) {
     e.preventDefault();
-    let data = $( "#add-tea-form" ).serialize();
+    let data = $("#add-tea-form").serialize();
     console.log("data: " + data);
     validateTea();
     if (!errorCount) {
-        alert("Submitted successfully!");
-        $.post( "http://127.0.0.1:8080/teatime/tea/add", data );
+        $.post("http://127.0.0.1:8080/teatime/tea/add", data)
+            .done(function () {
+                alert("Submitted successfully!");
+            })
+            .fail(function (xhr, status, error) {
+                alert("Something went wrong, please try again");
+            });
     }
 });
 
@@ -81,12 +86,12 @@ function successValidation(input, errorId) {
     document.getElementById(errorId).innerHTML = '';
 }
 
-function containsNonNumbers(input) {
-    let regexOnlyNumbers = /^[0-9.]+$/;
-    return !regexOnlyNumbers.exec(input.value);
-}
-
 function validateCaffeineContent() {
+    if (isFieldBlank(caffeineContent)) {
+        errorOnInputField(caffeineContent, caffeineContentError, "Caffeine content must be provided");
+        return false;
+    }
+
     let parsedCaffeineContent = parseFloat(caffeineContent.value);
 
     if (parsedCaffeineContent < 0) {
@@ -99,6 +104,11 @@ function validateCaffeineContent() {
         successValidation(caffeineContent, caffeineContentError);
         return true;
     }
+}
+
+function containsNonNumbers(input) {
+    let regexOnlyNumbers = /^[0-9.]+$/;
+    return !regexOnlyNumbers.exec(input.value);
 }
 
 function validateDescription() {
@@ -147,8 +157,8 @@ function scrollToFirstElementFailed(isNameOk, isOriginCountryOk, isHarvestSeason
         harvestSeason.scrollIntoView()
     } else if (!isCaffeineContentOk) {
         caffeineContent.scrollIntoView()
-    // } else if (!isDescOk) {
-    //     description.scrollIntoView()
+        // } else if (!isDescOk) {
+        //     description.scrollIntoView()
     } else if (!isImageLinkOk) {
         imageLink.scrollIntoView()
     }
