@@ -73,6 +73,9 @@ $('form').submit(function(e){
             data: data,
             success: function(data) {
                 alert('Tea updated!');
+            },
+            error: function () {
+                alert("Something went wrong, please try again later!")
             }
         });
     }
