@@ -224,6 +224,18 @@
 }
 /*# /More accessories button -->*/
 
+/*#-- delete user button -->*/
+
+.delete-button {
+    background-color: #910017;
+    border: 1px solid #000000;
+    color: white;
+    border-radius: 3px;
+    padding: .5em;
+    font-size: 20px
+}
+/*#-- delete user button -->*/
+
 /*# /Pagination -->*/
 
 /*# Footer -->*/
