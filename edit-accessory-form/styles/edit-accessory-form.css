@@ -24,6 +24,23 @@
 
 /*# /Header -->*/
 
+/*# Error -->*/
+.error {
+    font-size: 15px;
+    color: #bb0018;
+    text-align: center;
+}
+
+.error-summary {
+    font-size: 15px;
+    color: #bb0018;
+    text-align: left;
+    flex: 0.5;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+/*# Error -->*/
+
 /*# Navigation -->*/
 .nav-container {
     padding: 0;

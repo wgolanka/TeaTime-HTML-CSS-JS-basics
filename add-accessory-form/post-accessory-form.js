@@ -26,6 +26,7 @@ $('form').submit(function(e){
     if (!errorCount) {
         alert("Submitted successfully!");
         $.post( "http://127.0.0.1:8080/teatime/accessory/add", data );
+        //TODO add on error
     }
 });
 
