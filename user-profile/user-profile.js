@@ -25,12 +25,23 @@ $(document).ready(function () {
             location.href = url;
             console.log("on click button tea edit profile url: " + url)
         };
+
+        const addUserButton = document.getElementById("add-user-button");
+        addUserButton.onclick = function () {
+            let url = '../add-user-form/add-user-form.html';
+            location.href = url;
+            console.log("on click button add user form url: " + url)
+        };
     });
 
+    $.get("http://localhost:8080/teatime/tea/byCurrentUser", function (data) {
 
-    //TODO show user teas
-    $.get("http://localhost:8080/teatime/tea/all", function (data) {
-        console.log("Data Loaded: " + data[0].id);
+        if(data.length === 0){
+            alert("User has no teas added yet");
+            return
+        }
+
+        console.log("Data Loaded, first tea Id: " + data[0].id);
 
         const list = document.getElementById("user-teas-ul");
 
@@ -148,5 +159,21 @@ $(document).ready(function () {
         userAccessories.appendChild(fragment);
     });
 
+    const deleteUserButton = document.getElementById("delete-user-button");
+    deleteUserButton.onclick = function () {
+        $.ajax({
+            url: 'http://127.0.0.1:8080/teatime/user/current',
+            type: 'DELETE',
+            success: function (data) {
+                alert('Account deleted!');
+                let url = "../homepage/homepage.html";
+                // location.href = url;
+                console.log("redirect to homepage after user delete: " + url)
+            },
+            error: function () {
+                alert("Something went wrong, try again soon!")
+            }
+        });
+    }
 
 });
