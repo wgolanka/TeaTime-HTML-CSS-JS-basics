@@ -20,8 +20,8 @@ $(document).ready(function () {
         avatar.src = data.avatar;
 
         const editProfileButton = document.getElementById("edit-profile-button");
-        editProfileButton.onclick = function(){
-            let url = '../edit-profile/edit-profile.html' +  "?id=" + encodeURIComponent(data.id);
+        editProfileButton.onclick = function () {
+            let url = '../edit-profile/edit-profile.html' + "?id=" + encodeURIComponent(data.id);
             location.href = url;
             console.log("on click button tea edit profile url: " + url)
         };
@@ -73,8 +73,8 @@ $(document).ready(function () {
             divCard.appendChild(divCardTextContainer);
             divCard.id = data[i].id;
 
-            divCard.onclick = function(){
-                let url = "../tea-details/tea-details.html" +  "?id=" + encodeURIComponent(divCard.id);
+            divCard.onclick = function () {
+                let url = "../tea-details/tea-details.html" + "?id=" + encodeURIComponent(divCard.id);
                 location.href = url;
                 console.log("on click button tea details url: " + url)
             };
@@ -117,7 +117,12 @@ $(document).ready(function () {
             description.innerText = "Description: " + data[i].description;
 
             let isNecessary = document.createElement("p");
-            isNecessary.innerText = "Is necessary: " + data[i].isNecessary;
+
+            if (data[i].necessary === undefined) {
+                isNecessary.innerText = "Is necessary: false";
+            } else {
+                isNecessary.innerText = "Is necessary: " + data[i].necessary;
+            }
 
             let priceRange = document.createElement("p");
             priceRange.innerText = "Price Range: " + data[i].priceRange;
@@ -130,8 +135,8 @@ $(document).ready(function () {
             divCard.appendChild(divCardTextContainer);
             divCard.id = data[i].id;
 
-            divCard.onclick = function(){
-                let url = "../accessory-details/accessory-details.html" +  "?id=" + encodeURIComponent(divCard.id);
+            divCard.onclick = function () {
+                let url = "../accessory-details/accessory-details.html" + "?id=" + encodeURIComponent(divCard.id);
                 location.href = url;
                 console.log("on click button accessory details url: " + url)
             };
@@ -142,7 +147,6 @@ $(document).ready(function () {
 
         userAccessories.appendChild(fragment);
     });
-
 
 
 });

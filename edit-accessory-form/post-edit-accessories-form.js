@@ -1,6 +1,6 @@
 const name = document.getElementById('name');
-const priceFrom = document.getElementById('price-from');
-const priceTo = document.getElementById('price-to');
+const priceFrom = document.getElementById('price-range');
+const priceTo = document.getElementById('price-range-sec');
 const description = document.getElementById('description');
 const imageLink = document.getElementById('image-link');
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
             name.value = data.name;
 
             const isNecessary = document.getElementById("is-necessary");
-            isNecessary.value = data.isNecessary;
+            isNecessary.value = data.necessary;
 
             console.log(" accessory price from : " + data.priceFrom);
             console.log(" accessory price to : " +  data.priceTo);
@@ -63,8 +63,6 @@ $(document).ready(function () {
 
 let errorCount = 0;
 
-//TODO add validtion
-
 $('form').submit(function(e){
     e.preventDefault();
     const editAccessoryDiv = document.getElementById("edit-accessory-div");
@@ -72,14 +70,20 @@ $('form').submit(function(e){
     data = data + "&id=" + encodeURIComponent(editAccessoryDiv.getAttribute("accessoryId"));
     console.log("data: " + data);
 
-    $.ajax({
-        url: 'http://127.0.0.1:8080/teatime/accessory/update',
-        type: 'PUT',
-        data: data,
-        success: function(data) {
-            alert('Accessory updated!');
-        }
-    });
+    validateAccessory();
+    if(!errorCount){
+        $.ajax({
+            url: 'http://127.0.0.1:8080/teatime/accessory/update',
+            type: 'PUT',
+            data: data,
+            success: function(data) {
+                alert('Accessory updated!');
+            },
+            error: function () {
+                alert('Something went wrong, please try again later :(');
+            }
+        });
+    }
 });
 
 function getPathParamsArray() {
@@ -96,14 +100,6 @@ function getPathParamsArray() {
     }
     return queryString;
 }
-
-// function validateForm() {
-//     validateAccessory();
-//     if (!errorCount) {
-//         alert("Submitted successfully!")
-//     }
-//     return !errorCount;
-// }
 
 function validateAccessory() {
     errorCount = 0;
