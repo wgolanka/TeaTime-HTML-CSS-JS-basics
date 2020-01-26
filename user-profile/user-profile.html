@@ -60,7 +60,7 @@
 <div class="profile-info">
     <!-- Avatar-->
     <div class="user-avatar">
-        <img class="avatar" src="../images/avatar.png"/>
+        <img class="avatar" id="avatar-usr" src="../images/avatar.png"/>
     </div>
     <!-- /Avatar -->
 
@@ -70,18 +70,22 @@
             <ul class="form-wrapper">
                 <li class="form-row">
                     <label class="label" for="email">Email:</label>
-                    <p class="form-paragraph" id="email">Geralt420@gmail.com</p>
+                    <p class="form-paragraph" id="email"> </p>
                 </li>
                 <li class="form-row">
                     <label class="label" for="username">Username:</label>
-                    <p class="form-paragraph" id="username">Geralt420</p>
+                    <p class="form-paragraph" id="username"> </p>
                 </li>
                 <li class="form-row">
                     <label class="label" for="description">Description:</label>
-                    <p class="form-paragraph" id="description">I am me, Hi!</p>
+                    <p class="form-paragraph" id="description"> </p>
                 </li>
                 <li class="form-row">
-                    <input class="form-submit-button" type="button" value="Edit your profile"
+                    <label class="label" for="account-created">Account created:</label>
+                    <p class="form-paragraph" id="account-created"> </p>
+                </li>
+                <li class="form-row">
+                    <input class="form-submit-button" id="edit-profile-button" type="button" value="Edit your profile"
                            onclick="location.href='../edit-profile/edit-profile.html'">
                 </li>
             </ul>

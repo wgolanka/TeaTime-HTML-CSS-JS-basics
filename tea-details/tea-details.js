@@ -27,6 +27,21 @@ $(document).ready(function () {
             const caffeineContent = document.getElementById("caffeine-content");
             caffeineContent.innerText = data.caffeineContent + " mg";
 
+            if(data.brewingConfig != null){
+                console.log("brewing config: " + data.brewingConfig);
+                const brewingTime = document.getElementById("brewing-time");
+                brewingTime.innerText = data.brewingConfig.brewingTime;
+
+                const ingredients = document.getElementById("ingredients");
+                ingredients.innerText = data.brewingConfig.ingredients;
+
+                const drinkingTime = document.getElementById("best-time-to-drink");
+                drinkingTime.innerText = data.brewingConfig.drinkingTime;
+
+                const description = document.getElementById("description");
+                description.innerText = data.brewingConfig.description;
+            }
+
             const teaImage = document.getElementById("tea-image");
             teaImage.src = data.imageLink;
             teaImage.style = "width:80%";
@@ -38,6 +53,13 @@ $(document).ready(function () {
                 let url = "../edit-tea-form/edit-tea-form.html" + "?id=" + encodeURIComponent(data.id);
                 location.href = url;
                 console.log("on click button edit tea details url: " + url)
+            };
+
+            const editTeaConfigButton = document.getElementById("edit-tea-config-button");
+            editTeaConfigButton.onclick = function () {
+                let url = "../edit-tea-config-form/edit-tea-config-form.html" + "?id=" + encodeURIComponent(data.id);
+                location.href = url;
+                console.log("on click button edit tea config details url: " + url)
             };
 
             let urlDelete = "http://127.0.0.1:8080/teatime/tea/delete" + idParam;
