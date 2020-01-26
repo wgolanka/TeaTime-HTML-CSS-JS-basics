@@ -138,7 +138,11 @@ $(document).ready(function () {
                 description.innerText = "Description: " + data[i].description;
 
                 let isNecessary = document.createElement("p");
-                isNecessary.innerText = "Is necessary: " + data[i].isNecessary;
+                if (data[i].necessary === undefined) {
+                    isNecessary.innerText = "Is necessary: false";
+                } else {
+                    isNecessary.innerText = "Is necessary: " + data[i].necessary;
+                }
 
                 let priceRange = document.createElement("p");
                 priceRange.innerText = "Price Range: " + data[i].priceRange;
