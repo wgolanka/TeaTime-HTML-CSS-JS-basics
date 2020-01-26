@@ -37,7 +37,7 @@ $(document).ready(function () {
             name.value = data.name;
 
             const isNecessary = document.getElementById("is-necessary");
-            isNecessary.value = data.isNecessary;
+            isNecessary.value = data.necessary;
 
             console.log(" accessory price from : " + data.priceFrom);
             console.log(" accessory price to : " +  data.priceTo);
