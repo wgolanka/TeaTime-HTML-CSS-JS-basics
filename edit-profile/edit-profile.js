@@ -30,7 +30,7 @@ $(document).ready(function () {
         $.get(url, function (data) {
 
             const username = document.getElementById("username");
-            username.value = data.nickname;
+            username.value = data.username;
 
             const description = document.getElementById("description");
             description.value = data.description;
