@@ -8,7 +8,7 @@ $(document).ready(function () {
         email.innerText = data.emailAddress;
 
         const username = document.getElementById("username");
-        username.innerText = data.nickname;
+        username.innerText = data.username;
 
         const description = document.getElementById("description");
         description.innerText = data.description;
