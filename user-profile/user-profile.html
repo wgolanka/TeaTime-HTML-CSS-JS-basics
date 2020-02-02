@@ -97,32 +97,49 @@
 
 <!-- TeasTiles -->
 <div class="teas-tiles-container">
-    <!-- All teas title -->
-    <h2 class="all-teas-title">Your teas</h2>
-    <!-- /All teas title -->
-    <div class="tiles">
-        <ul class="tiles-list" id="user-teas-ul">
+    <div class="d-none content">
+        <!-- All teas title -->
+        <h2 class="all-teas-title">Your teas</h2>
+        <!-- /All teas title -->
+        <div class="tiles">
+            <ul class="tiles-list" id="user-teas-ul">
 
-        </ul>
+            </ul>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border spinner-size" role="status" id="spinner1">
+            <div class="loader">Loading...</div>
+        </div>
     </div>
 </div>
 <!-- /TeasTiles -->
 
 <!-- Accessories tiles -->
 <div class="accessories-tiles-container">
-    <!-- All teas title -->
-    <p class="all-accessories-title">Your accessories</p>
-    <!-- /All teas title -->
-    <div class="tiles">
-        <ul class="tiles-list" id="user-accessories-ul">
+    <div class="d-none content">
+        <!-- All teas title -->
+        <p class="all-accessories-title">Your accessories</p>
+        <!-- /All teas title -->
+        <div class="tiles">
+            <ul class="tiles-list" id="user-accessories-ul">
 
-        </ul>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border spinner-size" role="status" id="spinner2">
+            <div class="loader">Loading...</div>
+        </div>
     </div>
 </div>
 <!-- /Accessories tiles -->
 
 <!-- More accessories button -->
-<div class="accessories-button">
+<div class="d-none accessories-button">
     <input class="form-submit-button" onclick="location.href='../add-accessory-form/add-accessory-form.html'"
            type="submit" value="Add new accessory">
 </div>

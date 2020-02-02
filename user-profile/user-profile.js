@@ -1,6 +1,13 @@
 $(document).ready(function () {
     console.log("ready - user-profile");
 
+    const teasTilesContainer = document.querySelector('.teas-tiles-container .content');
+    const accessoriesButton = document.querySelector('.accessories-button');
+    const accessoriesTilesContainer = document.querySelector('.accessories-tiles-container .content');
+
+    const spinner1 = document.getElementById('spinner1');
+    const spinner2 = document.getElementById('spinner2');
+
     $.get("http://localhost:8080/teatime/user/current", function (data) {
         console.log("Data Loaded, user id: " + data.id);
 
@@ -42,6 +49,8 @@ $(document).ready(function () {
         }
 
         console.log("Data Loaded, first tea Id: " + data[0].id);
+        teasTilesContainer.classList.remove('d-none');
+        spinner1.classList.add('d-none');
 
         const list = document.getElementById("user-teas-ul");
 
@@ -99,7 +108,8 @@ $(document).ready(function () {
 
     $.get("http://localhost:8080/teatime/accessory/all", function (data) {
         console.log("User Accessories Loaded: " + data[0].id);
-
+        accessoriesTilesContainer.classList.remove('d-none');
+        spinner2.classList.add('d-none');
         const userAccessories = document.getElementById("user-accessories-ul");
 
         const fragment = document.createDocumentFragment();
