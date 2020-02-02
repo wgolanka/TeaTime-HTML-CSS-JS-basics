@@ -36,6 +36,17 @@ $('form').submit(function (e) {
     }
 });
 
+$(document).ready(function () {
+    $.get("http://localhost:8080/teatime/user/current", function (data) {
+
+    })
+        .fail(function () {
+            alert("You need to log in to add teas");
+            location.href = '../login-form/login-form.html';
+        });
+
+});
+
 function validateTea() {
     errorCount = 0;
     let isNameOk = simpleValidate(name, nameError, "Name");

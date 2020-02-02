@@ -56,6 +56,7 @@ $(document).ready(function () {
             };
 
             const editTeaConfigButton = document.getElementById("edit-tea-config-button");
+
             editTeaConfigButton.onclick = function () {
                 let url = "../edit-tea-config-form/edit-tea-config-form.html" + "?id=" + encodeURIComponent(data.id);
                 location.href = url;

@@ -9,6 +9,7 @@
     <!-- import styles -->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="styles/login-form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>TIN - Mini Project</title>
 </head>
 <body class="body">
@@ -58,24 +59,34 @@
 
 <!-- Form -->
 <div class="form-login">
-    <form class="form">
+    <form class="form" id="login-form" method="post">
         <ul class="form-wrapper">
             <li class="form-row">
-                <label class="label" for="name">Username:</label>
-                <input class="form-input" id="name" type="text" name="Name">
+                <label class="label" for="name">Email:</label>
+                <input class="form-input" id="name" type="text" name="email">
             </li>
             <li class="form-row">
                 <label class="label" for="password">Password:</label>
-                <input class="form-input" id="password" type="password" name="Password">
+                <input class="form-input" id="password" maxlength="8" minlength="6" type="password" name="password">
             </li>
             <li class="form-row">
-                <input class="form-submit-button" type="button" value="Log in"
-                       onclick="location.href='../user-profile/user-profile.html'">
+                <input class="form-submit-button" type="submit"
+                       value="Log in" id="submit-button">
             </li>
         </ul>
     </form>
 </div>
 <!-- /Form -->
+
+<div class="form-header">
+    <p class="header">No account?
+        <br>Click below</p>
+</div>
+<div class="register-div">
+    <button id="register-button" class="form-register-button"
+            onclick="location.href='../register-form/register-form.html'"
+    >Register</button>
+</div>
 
 <!-- Footer -->
 <footer class="footer">
@@ -83,5 +94,6 @@
 </footer>
 <!-- /Footer -->
 
+<script src="user-login.js"></script>
 </body>
 </html>

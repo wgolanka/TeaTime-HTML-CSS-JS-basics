@@ -9,6 +9,7 @@
     <!-- import styles -->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="styles/register-form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>TIN - Mini Project</title>
 </head>
 <body class="body">
@@ -58,33 +59,33 @@
 
 <!-- Form -->
 <div class="form-register">
-    <form class="form">
+    <form class="form" id="register-form" method="post">
         <ul class="form-wrapper">
             <li class="form-row">
                 <label class="label" for="email">Email:</label>
-                <input class="form-input" id="email" type="text" name="Email" placeholder="Geralt420@gmail.com">
+                <input class="form-input" id="email" type="text" name="email" placeholder="Geralt420@gmail.com">
             </li>
             <li class="form-row">
                 <label class="label" for="username">Username:</label>
-                <input class="form-input" id="username" type="text" name="Username" placeholder="Geralt420">
+                <input class="form-input" id="username" type="text" name="username" placeholder="Geralt420">
             </li>
             <li class="form-row">
                 <label class="label" for="password">Password:</label>
-                <input class="form-input" id="password" type="password" name="Password" placeholder="********">
+                <input class="form-input" id="password" type="password" name="password" placeholder="********">
             </li>
             <li class="form-row">
                 <label class="label" for="description">Description:</label>
-                <textarea class="form-text-area" id="description" name="Description"
+                <textarea class="form-text-area" id="description" name="description"
                           placeholder="Tell us about yourself!"></textarea>
             </li>
             <li class="form-row">
                 <label class="label" for="image-link">Avatar link:</label>
                 <textarea class="form-text-area" id="image-link" placeholder="https://i.imgur.com/t04DtjZ.jpg"
-                          name="Image link"></textarea>
+                          name="avatar"></textarea>
             </li>
             <li class="form-row">
-                <input class="form-submit-button" type="button" value="Register"
-                       onclick="location.href='../user-profile/user-profile.html'">
+                <input class="form-submit-button" type="submit"
+                       value="Register" id="submit-button">
             </li>
         </ul>
     </form>
@@ -97,5 +98,6 @@
 </footer>
 <!-- /Footer -->
 
+<script src="user-register.js"></script>
 </body>
 </html>

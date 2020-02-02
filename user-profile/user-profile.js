@@ -2,6 +2,11 @@ $(document).ready(function () {
     console.log("ready - user-profile");
 
     $.get("http://localhost:8080/teatime/user/current", function (data) {
+
+        if(data === null || data.size === 0) {
+            location.href = '../login-form/login-form.html';
+        }
+
         console.log("Data Loaded, user id: " + data.id);
 
         const email = document.getElementById("email");
@@ -28,16 +33,26 @@ $(document).ready(function () {
 
         const addUserButton = document.getElementById("add-user-button");
         addUserButton.onclick = function () {
-            let url = '../add-user-form/add-user-form.html';
-            location.href = url;
-            console.log("on click button add user form url: " + url)
+            console.log("on click button add user form url: ");
+
+            $.post("http://127.0.0.1:8080/teatime/user/signout", data)
+                .done(function () {
+                    alert("Sign out successfully!");
+                    location.href = '../login-form/login-form.html';
+                })
+                .fail(function (xhr, status, error) {
+                    alert("Something went wrong, please try again");
+                });
         };
-    });
+    })
+        .fail(function() {
+            location.href = '../login-form/login-form.html';
+        });
 
     $.get("http://localhost:8080/teatime/tea/byCurrentUser", function (data) {
 
         if(data.length === 0){
-            alert("User has no teas added yet");
+            // alert("User has no teas added yet");
             return
         }
 
@@ -97,8 +112,8 @@ $(document).ready(function () {
         list.appendChild(fragment);
     });
 
-    $.get("http://localhost:8080/teatime/accessory/all", function (data) {
-        console.log("User Accessories Loaded: " + data[0].id);
+    $.get("http://localhost:8080/teatime/accessory/byCurrentUser", function (data) {
+        // console.log("User Accessories Loaded: " + data[0].id);
 
         const userAccessories = document.getElementById("user-accessories-ul");
 
